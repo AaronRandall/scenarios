@@ -6,6 +6,7 @@ require File.expand_path(ROOT + '/lib/scenarios.rb')
 
 opts = Trollop::options do
   opt :ios_app_path, "iOS app path", :type => :string, :required => true
+  opt :tests_path, "Path to tests", :type => :string, :required => true
   opt :test_name, "Single test to run (all tests run if this is excluded)", :type => :string, :default => nil
   opt :run_on_hardware, "Run the tests on a hardware device (tests run on simulator by default)", :type => :boolean, :default => false
   opt :hardware_id, "The hardware ID of the device to target.  If this is not provided, an attempt will be made to auto-detect the id.", :type => :string, :default => nil
@@ -18,7 +19,9 @@ opts = Trollop::options do
 end
 
 Trollop::die :ios_app_path, "must exist" unless File.exist?(opts[:ios_app_path])
+Trollop::die :tests_path,   "must exist" unless File.exist?(opts[:tests_path])
 opts[:ios_app_path] = File.expand_path(opts[:ios_app_path])
+opts[:tests_path]   = File.expand_path(opts[:tests_path])
 
 runner = Scenarios::Runner.new(opts)
 runner.run
