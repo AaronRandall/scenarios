@@ -36,20 +36,20 @@ module Scenarios
       end
 
       def run_tests
-        @tests_to_run.each do |test|
+        @ops.tests_to_run.each do |test|
           # Quit any stale instances of the simulator and instruments
-          kill_simulator_and_instruments
+          Scenarios.kill_simulator_and_instruments
 
-          command_to_run = "#{TUNEUP_BIN} #{@ops.ios_app_name} #{test} #{OUTPUT_PATH} #{'-d dynamic' if @ops.run_on_device} -p -j #{username_password_parameter}"
+          command_to_run = "#{AUTOMATION_LIBRARY} #{@ops.ios_app_name} #{test} #{@ops.tests_output_path} #{'-d dynamic' if @ops.run_on_device} -p -j #{@ops.test_variables}"
           Logger.log( "Running test #{test} (#{command_to_run})")
           system command_to_run
 
           if $? != 0
-            kill_simulator_and_instruments
+            Scenarios.kill_simulator_and_instruments
             raise "[ERROR: Test '#{test}' failed" and return
           end
 
-          kill_simulator_and_instruments
+          Scenarios.kill_simulator_and_instruments
         end
       end
     end

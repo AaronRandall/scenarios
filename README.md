@@ -5,6 +5,9 @@
 
 brew install ios-sim
 
+## Run the samples
+bin/run --ios-app-name '2012 Olympics' --ios-app-path sample/app/ --tests-path sample/tests/
+
 ## Running all tests
 
 To run all acceptance tests (substituting your app path and simulator path as required, using full paths):
