@@ -39,8 +39,10 @@ module Scenarios
           FileUtils.mkdir_p(support_dir)
         end
 
+        # this file should prob already exist in a single folder with
+        # tuneup files, then just copy the entire thing into test support folder
         File.open("#{support_dir}/support/scenarios.js", "w") do |f|     
-          f.write("#import '#{AUTOMATION_LIBRARY_SCRIPT}'")
+          f.write("#import \"automation_library/tuneup.js\"")
         end
       end
 
@@ -49,7 +51,7 @@ module Scenarios
           # Quit any stale instances of the simulator and instruments
           Scenarios.kill_simulator_and_instruments
 
-          command_to_run = "#{AUTOMATION_LIBRARY_RUNNER} #{@ops.ios_app_name} #{test} #{@ops.tests_output_path} #{'-d dynamic' if @ops.run_on_device} -p -j #{@ops.test_variables}"
+          command_to_run = "#{AUTOMATION_LIBRARY_RUNNER} '#{@ops.ios_app_name}' #{test} '#{@ops.tests_output_path}' #{'-d dynamic' if @ops.run_on_device} -p -j '#{@ops.test_variables}'"
           Logger.log( "Running test #{test} (#{command_to_run})")
           system command_to_run
 

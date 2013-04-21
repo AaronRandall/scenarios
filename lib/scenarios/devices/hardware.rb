@@ -26,6 +26,18 @@ module Scenarios
         system "#{SCRIPT_PATH}/transporter_chief.rb #{@ops.hardware_id.nil? ? '' : "--device " + @ops.hardware_id} #{@ops.ios_app_path}/build/Debug-iphoneos/#{@ops.ios_app_name}.app"
       end
 
+      def create_test_support_files
+        support_dir = File.dirname("#{@ops.tests_path}/support")
+
+        unless File.directory?(support_dir)
+          FileUtils.mkdir_p(support_dir)
+        end
+
+        File.open("#{support_dir}/support/scenarios.js", "w") do |f|     
+          f.write("#import '#{AUTOMATION_LIBRARY_SCRIPT}'")
+        end
+      end
+
       def run_tests
         @ops.tests_to_run.each do |test|
           # Quit any stale instances of the simulator and instruments
