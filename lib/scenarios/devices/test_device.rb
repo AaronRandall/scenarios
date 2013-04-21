@@ -1,9 +1,8 @@
 module Scenarios
   module Devices
     class TestDevice
-      def initialize(tests_to_run, test_variables = nil)
-        @tests_to_run   = tests_to_run
-        @test_variables = test_variables
+      def initialize(options)
+        @ops = options
       end
 
       def clean_target

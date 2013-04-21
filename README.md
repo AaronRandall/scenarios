@@ -4,8 +4,6 @@
 ## Prerequisites
 
 brew install ios-sim
-sudo gem install bundler
-bundle install --path vendor/bundle
 
 ## Running all tests
 

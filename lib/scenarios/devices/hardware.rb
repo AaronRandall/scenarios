@@ -1,5 +1,7 @@
 module Scenarios
   module Devices
+    require 'fileutils'
+
     class Hardware < TestDevice
       def initialize(tests_to_run, test_username, test_password, hardware_id)
         super(tests_to_run, test_username, test_password)
