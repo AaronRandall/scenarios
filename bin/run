@@ -5,7 +5,8 @@ require File.expand_path(ROOT + '/lib/scenarios/option_parser/trollop')
 require File.expand_path(ROOT + '/lib/scenarios.rb')
 
 opts = Trollop::options do
-  opt :ios_app_path, "iOS app path", :type => :string, :required => true
+  opt :ios_app_name, "Name (CFBundleDisplayName) of the iOS app", :type => :string, :required => true
+  opt :ios_app_path, "Path to iOS app", :type => :string, :required => true
   opt :tests_path, "Path to tests", :type => :string, :required => true
   opt :test_name, "Single test to run (all tests run if this is excluded)", :type => :string, :default => nil
   opt :run_on_hardware, "Run the tests on a hardware device (tests run on simulator by default)", :type => :boolean, :default => false

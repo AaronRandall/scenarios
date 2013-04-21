@@ -5,13 +5,14 @@ module Scenarios
     class Simulator < TestDevice
       def clean_target
         Logger.log('Deleting any existing simulator apps') 
-        puts "#{@ops.simulator_path}"
+        puts "* simpath=#{@ops.simulator_path}"
+        puts "* @ops=#{@ops.inspect}"
         #FileUtils.rm_rf(Dir.glob("#{@ops.simulator_path}/*"))
       end
 
       def clean_project_build_directory
         Logger.log('Deleting any existing builds from the project path')
-        puts "#{@ops.ios_app_path}"
+        puts "* apppath=#{@ops.ios_app_path}"
         #FileUtils.rm_rf(Dir.glob("#{@ops.ios_app_path}/build/*"))
       end
 
@@ -26,14 +27,12 @@ module Scenarios
 
       def install_app
         Logger.log('Installing and launching in simulator')
-        system "ios-sim launch #{@ops.ios_app_path}/build/Debug-iphonesimulator/#{@ops.ios_app_name}.app &"
+        system "ios-sim launch '#{@ops.ios_app_path}/build/Debug-iphonesimulator/#{@ops.ios_app_name}.app' &"
 
         Logger.log('Waiting for App to launch')
         sleep 15
 
-        Logger.log('Accepting location services')
-        system "osascript #{SCRIPT_PATH}/accept_location_services.scpt"
-        sleep 3
+        #system "osascript #{SCRIPT_PATH}/accept_location_services.scpt"
       end
 
       def run_tests

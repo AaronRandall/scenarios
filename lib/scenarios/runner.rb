@@ -7,9 +7,8 @@ module Scenarios
 
   class Runner
     def initialize(options)
+      options[:simulator_path] = find_simulator_path
       @ops = OpenStruct.new(options)
-      # extract app name from project file
-      # find latest simulator path 
     end
 
     def run
@@ -49,6 +48,17 @@ module Scenarios
       system "killall 'iPhone Simulator'"
       Logger.log('Killing instruments (if running)')
       system "killall 'instruments'"
+    end
+
+    def find_simulator_path
+      iphone_simulator_path = File.expand_path("~/Library/Application\ Support/iPhone\ Simulator/")
+
+      iphone_simulators = Dir.glob("#{iphone_simulator_path}/[0-9]*")
+      if iphone_simulators.size == 0
+        raise RuntimeError, "No iPhone simulators found in #{iphone_simulator_path}"
+      end
+  
+      iphone_simulators.last
     end
   end
 end
