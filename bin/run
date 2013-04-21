@@ -17,6 +17,7 @@ opts = Trollop::options do
   opt :clean_project_dir, "Clean the Xcode project build directory before running tests", :type => :boolean, :default => true
   opt :build_app, "Build the app (compile with xcodebuild) before running tests", :type => :boolean, :default => true
   opt :install_app, "Install the app (turn this off to simply rerun tests on existing installed app)", :type => :boolean, :default => true
+  opt :create_test_support_files, "Generate the script support files required to run tests", :type => :boolean, :default => true
   opt :run_tests, "Run the tests", :type => :boolean, :default => true
 end
 

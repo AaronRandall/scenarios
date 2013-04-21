@@ -21,6 +21,10 @@ module Scenarios
         raise NotImplementedError
       end
 
+      def create_test_support_files
+        raise NotImplementedError
+      end
+
       def run_tests
         raise NotImplementedError
       end

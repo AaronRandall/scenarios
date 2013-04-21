@@ -2,7 +2,8 @@ module Scenarios
   require ROOT + 'devices'
   require 'ostruct'
 
-  AUTOMATION_LIBRARY = ROOT + 'automation_library/tuneup/test_runner/run'
+  AUTOMATION_LIBRARY_RUNNER = ROOT + 'automation_library/tuneup/test_runner/run'
+  AUTOMATION_LIBRARY_SCRIPT = ROOT + 'automation_library/tuneup/tuneup.js'
 
   class Runner
     def initialize(options)
@@ -41,6 +42,7 @@ module Scenarios
       test_device.clean_project_build_directory if @ops.clean_project_build_directory
       test_device.build_app                     if @ops.build_app
       test_device.install_app                   if @ops.install_app
+      test_device.create_test_support_files     if @ops.create_test_support_files
       test_device.run_tests                     if @ops.run_tests
     end
 

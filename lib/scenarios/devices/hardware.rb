@@ -31,7 +31,7 @@ module Scenarios
           # Quit any stale instances of the simulator and instruments
           Scenarios.kill_simulator_and_instruments
 
-          command_to_run = "#{AUTOMATION_LIBRARY} #{@ops.ios_app_name} #{test} #{@ops.tests_output_path} -d #{@ops.hardware_id.nil? ? 'dynamic' : @ops.hardware_id} -p -j #{@ops.test_variables}"
+          command_to_run = "#{AUTOMATION_LIBRARY_RUNNER} #{@ops.ios_app_name} #{test} #{@ops.tests_output_path} -d #{@ops.hardware_id.nil? ? 'dynamic' : @ops.hardware_id} -p -j #{@ops.test_variables}"
           log( "Running test #{test} (#{command_to_run})")
           system command_to_run
 

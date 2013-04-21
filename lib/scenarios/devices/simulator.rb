@@ -5,14 +5,11 @@ module Scenarios
     class Simulator < TestDevice
       def clean_target
         Logger.log('Deleting any existing simulator apps') 
-        puts "* simpath=#{@ops.simulator_path}"
-        puts "* @ops=#{@ops.inspect}"
         #FileUtils.rm_rf(Dir.glob("#{@ops.simulator_path}/*"))
       end
 
       def clean_project_build_directory
         Logger.log('Deleting any existing builds from the project path')
-        puts "* apppath=#{@ops.ios_app_path}"
         #FileUtils.rm_rf(Dir.glob("#{@ops.ios_app_path}/build/*"))
       end
 
@@ -35,12 +32,24 @@ module Scenarios
         #system "osascript #{SCRIPT_PATH}/accept_location_services.scpt"
       end
 
+      def create_test_support_files
+        support_dir = File.dirname("#{@ops.tests_path}/support")
+
+        unless File.directory?(support_dir)
+          FileUtils.mkdir_p(support_dir)
+        end
+
+        File.open("#{support_dir}/support/scenarios.js", "w") do |f|     
+          f.write("#import '#{AUTOMATION_LIBRARY_SCRIPT}'")
+        end
+      end
+
       def run_tests
         @ops.tests_to_run.each do |test|
           # Quit any stale instances of the simulator and instruments
           Scenarios.kill_simulator_and_instruments
 
-          command_to_run = "#{AUTOMATION_LIBRARY} #{@ops.ios_app_name} #{test} #{@ops.tests_output_path} #{'-d dynamic' if @ops.run_on_device} -p -j #{@ops.test_variables}"
+          command_to_run = "#{AUTOMATION_LIBRARY_RUNNER} #{@ops.ios_app_name} #{test} #{@ops.tests_output_path} #{'-d dynamic' if @ops.run_on_device} -p -j #{@ops.test_variables}"
           Logger.log( "Running test #{test} (#{command_to_run})")
           system command_to_run
 
