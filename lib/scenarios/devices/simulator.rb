@@ -5,12 +5,14 @@ module Scenarios
     class Simulator < TestDevice
       def clean_target
         Logger.log('Deleting any existing simulator apps') 
-        FileUtils.rm_rf(Dir.glob("#{@ops.simulator_path}/*"))
+        puts "#{@ops.simulator_path}"
+        #FileUtils.rm_rf(Dir.glob("#{@ops.simulator_path}/*"))
       end
 
       def clean_project_build_directory
         Logger.log('Deleting any existing builds from the project path')
-        FileUtils.rm_rf(Dir.glob("#{@ops.ios_app_path}/build/*"))
+        puts "#{@ops.ios_app_path}"
+        #FileUtils.rm_rf(Dir.glob("#{@ops.ios_app_path}/build/*"))
       end
 
       def build_app

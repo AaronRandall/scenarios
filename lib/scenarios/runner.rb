@@ -8,6 +8,8 @@ module Scenarios
   class Runner
     def initialize(options)
       @ops = OpenStruct.new(options)
+      # extract app name from project file
+      # find latest simulator path 
     end
 
     def run
