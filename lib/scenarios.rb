@@ -1,1 +1,4 @@
-handle running steps based on params passed in from bin script
+module Scenarios
+  ROOT = File.expand_path('..', __FILE__) + '/scenarios/'
+  require ROOT + 'runner'
+end
