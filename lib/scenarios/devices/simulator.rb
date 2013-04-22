@@ -33,17 +33,15 @@ module Scenarios
       end
 
       def create_test_support_files
-        support_dir = File.dirname("#{@ops.tests_path}/support")
+        support_dir = "#{@ops.tests_path}/support"
+        FileUtils.mkdir_p(support_dir) unless File.directory?(support_dir)
 
-        unless File.directory?(support_dir)
-          FileUtils.mkdir_p(support_dir)
-        end
+        support_automation_dir = support_dir + '/automation_library'
+        FileUtils.mkdir_p(support_automation_dir) unless File.directory?(support_automation_dir)
 
-        # this file should prob already exist in a single folder with
-        # tuneup files, then just copy the entire thing into test support folder
-        File.open("#{support_dir}/support/scenarios.js", "w") do |f|     
-          f.write("#import \"automation_library/tuneup.js\"")
-        end
+        # Copy all automation library .js files to the tests support folder
+        FileUtils.cp(SCENARIOS_SCRIPT_PATH, support_dir)
+        FileUtils.cp_r(AUTOMATION_LIBRARY_PATH, support_automation_dir)
       end
 
       def run_tests
