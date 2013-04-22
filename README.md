@@ -1,13 +1,15 @@
 # iOS App Acceptance Tests
 
+## What
+An application to handle running iOS acceptance tests, in a simulator or hardware device.
+Brings together functionality from ios-sim, fruitstrap, transporter-chief, tuneup_js.
 
 ## Prerequisites
 
 brew install ios-sim
 
 ## Run the samples
-bin/run --ios-app-name '2012 Olympics' --ios-app-path sample/app/ --tests-path sample/tests/
-
+bin/run --ios-app-name '2012 Olympics' --ios-app-path sample/app/ --tests-path sample/tests/ --tests-output-path sample/output/
 ## Running all tests
 
 To run all acceptance tests (substituting your app path and simulator path as required, using full paths):
