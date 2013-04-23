@@ -1,0 +1,7 @@
+add helper methods
+customise app to have text input
+rename app project
+complete hardware setup
+remove unused runner options
+detact iOS sdk version for hardware device (see hardware.rb, def build_app)
+
