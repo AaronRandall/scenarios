@@ -3,9 +3,12 @@
 ## What
 An application to handle running iOS acceptance tests, in a simulator or hardware device.
 Brings together functionality from ios-sim, fruitstrap, transporter-chief, tuneup_js.
+Sample app courtesy of https://github.com/Frahaan/2012-Olympics-iOS--iPad-and-iPhone--source-code
 
 ## Prerequisites
 
+A mac
+Xcode (tested on 4.6.x)
 brew install ios-sim
 
 ## Run the samples

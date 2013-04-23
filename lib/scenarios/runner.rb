@@ -38,14 +38,14 @@ module Scenarios
     
     def run_test_steps(test_device)
       # kill any stale sim/instrument processes
-      Scenarios.kill_simulator_and_instruments
+      Scenarios.kill_simulator
 
       test_device.clean_target                  if @ops.clean_target
       test_device.clean_project_build_directory if @ops.clean_project_build_directory
       test_device.build_app                     if @ops.build_app
       test_device.install_app                   if @ops.install_app
-      test_device.create_test_support_files     if @ops.create_test_support_files
-      test_device.run_tests                     if @ops.run_tests
+      test_device.create_test_support_files
+      test_device.run_tests
     end
 
     def find_simulator_path
@@ -60,11 +60,9 @@ module Scenarios
     end
   end
 
-  def self.kill_simulator_and_instruments
+  def self.kill_simulator
     Logger.log('Killing simulator (if running)')
     system "killall 'iPhone Simulator'"
-    Logger.log('Killing instruments (if running)')
-    system "killall 'instruments'"
   end
 
 end
