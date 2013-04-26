@@ -5,3 +5,24 @@ complete hardware setup
 remove unused runner options
 detact iOS sdk version for hardware device (see hardware.rb, def build_app)
 
+
+Changes after discussion with Jcog:
+* keep JS tests top-level (with test fn names), and move details into functions in step_definition files.
+* remove test_device.rb from git
+* remove base_device.rb
+* create project.rb class, which implements:
+   clean_build_directory
+   create_test_support_files
+   build_app
+* update device classes to no longer inherit from base_device.
+* update device classes to only implement:
+   clean_target
+   install_app
+   run_tests
+* update run_test_steps method to take 'project' & 'test_device' objects.
+* update run_test_steps to do:
+  project.create_test_support_files
+  project.clean_build_directory
+  project.build_app
+  test_device.clean_install_directory (or just 'clean'?)
+  test_device.run_tests
