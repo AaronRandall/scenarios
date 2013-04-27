@@ -1,5 +1,6 @@
 module Scenarios
   require ROOT + 'devices'
+  require ROOT + 'project'
   require 'ostruct'
 
   SCRIPTS_PATH              = ROOT + 'scripts/'
@@ -15,36 +16,23 @@ module Scenarios
     end
 
     def run
-      if @ops.test_name
-        @ops.tests_to_run.push("#{@ops.tests_path}/#{@ops.test_name}")
-      else
-        Dir["#{@ops.tests_path}/*_test.js"].each {|test| @ops.tests_to_run.push(test) }
-      end
+      @ops.tests_to_run = find_tests_to_run
+      test_device = get_test_device
+      project     = Project.new(@ops, test_device)
 
-      if @ops.tests_to_run.nil? || @ops.tests_to_run.size == 0
-        raise RuntimeError, "No tests found in #{@ops.tests_path}"
-      end
-
-      if @ops.run_on_hardware or @ops.hardware_id
-        test_device = Devices::Hardware.new(@ops)
-      else
-        test_device = Devices::Simulator.new(@ops)
-      end
-
-      run_test_steps(test_device) 
+      run_test_steps(test_device, project) 
     end
 
     private
-    
-    def run_test_steps(test_device)
-      # kill any stale sim/instrument processes
+
+    def run_test_steps(test_device, project)
       Scenarios.kill_simulator
 
-      test_device.clean_target                  if @ops.clean_target
-      test_device.clean_project_build_directory if @ops.clean_project_build_directory
-      test_device.build_app                     if @ops.build_app
-      test_device.install_app                   if @ops.install_app
-      test_device.create_test_support_files
+      project.create_test_support_files
+      project.clean_build_directory     if @ops.clean_project_build_directory
+      project.build_app                 if @ops.build_app
+      test_device.clean_target          if @ops.clean_target
+      test_device.install_app           if @ops.install_app
       test_device.run_tests
     end
 
@@ -58,11 +46,35 @@ module Scenarios
   
       iphone_simulators.last
     end
+
+    def find_tests_to_run
+      tests_to_run = []
+      if @ops.test_name
+        tests_to_run.push("#{@ops.tests_path}/#{@ops.test_name}")
+      else
+        Dir["#{@ops.tests_path}/*_test.js"].each {|test| tests_to_run.push(test) }
+      end
+
+      if tests_to_run.nil? || tests_to_run.size == 0
+        raise RuntimeError, "No tests found in #{@ops.tests_path}"
+      end
+
+      tests_to_run
+    end
+
+    def get_test_device
+      if @ops.run_on_hardware or @ops.hardware_id
+        test_device = Devices::Hardware.new(@ops)
+      else
+        test_device = Devices::Simulator.new(@ops)
+      end
+    end
   end
 
   def self.kill_simulator
+    # kill any stale simulator processes
     Logger.log('Killing simulator (if running)')
-    system "killall 'iPhone Simulator'"
+    system "killall 'iPhone Simulator' &> /dev/null"
   end
 
 end

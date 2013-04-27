@@ -1,29 +1,24 @@
 module Scenarios
   module Devices
-    require ROOT + 'devices/shared_steps'
     require 'fileutils'
 
-    class Hardware < BaseDevice
+    class Hardware
+      def initialize(options)
+        @ops = options
+      end
+
+      def sdk
+        'iphoneos6.0'
+      end
+
       def clean_target
         # Nothing to do here as the ability to delete 
         # apps from devices is not currently supported
       end
 
-      def clean_project_build_directory
-        SharedSteps.clean_project_build_directory(@ops.ios_app_path)
-      end
-
-      def build_app
-        SharedSteps.build_app(@ops.ios_app_path, "iphoneos6.0")
-      end
-
       def install_app
         Logger.log('Installing on hardware')
         system "#{SCRIPT_PATH}/transporter_chief.rb #{@ops.hardware_id.nil? ? '' : "--device " + @ops.hardware_id} #{@ops.ios_app_path}/build/Debug-iphoneos/#{@ops.ios_app_name}.app"
-      end
-
-      def create_test_support_files
-        SharedSteps.create_test_support_files(@ops.tests_path)
       end
 
       def run_tests

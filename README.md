@@ -12,8 +12,12 @@ A mac
 Xcode (tested on 4.6.x)
 ios-sim ("brew install ios-sim")
 
+
 ## Run the samples
 bin/run --ios-app-name 'TableViewIOS5Demo' --ios-app-path sample/app/ --tests-path sample/tests/ --tests-output-path sample/output/
+
+Note that the first time you run the tests you may be asked for your password for developer toosl.
+
 ## Running all tests
 
 To run all acceptance tests (substituting your app path and simulator path as required, using full paths):
