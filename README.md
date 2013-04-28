@@ -1,9 +1,11 @@
 # Scenarios - iOS App Acceptance Testing
 
-## What
+## Overview
 Scenarios (Scenar-iOS, geddit?) is an application that handles running iOS acceptance tests, on a simulator or physical device. 
 
-Record interactions with your iOS app using Instruments, then package that output as tests.  Scenarios enables you to easily run a collection of tests against simulated and real app installs, and can be used ad-hoc, or connected to a continuous integration server.
+Record interactions with your iOS app using Instruments, then package the output as tests.  Scenarios enables you to easily run a collection of tests against simulated and real app installs, and can be used ad-hoc, or connected to a continuous integration server.
+
+Here's what the sample app & test included with this project look like:
 
 Demo here.
 
@@ -14,19 +16,19 @@ You will need:
 * Xcode (tested on 4.6.x)
 * ios-sim ("brew install ios-sim")
 
-## Run the samples on a simulator
+## Run the samples app & tests (on a simulator)
     bin/sample_simulator
 
 (Note that the first time you run the tests you may be asked for your password for developer tools).
 
-## Running the sample on hardware
+## Run the samples app & tests (on hardware)
 To run tests against hardware, first you should make sure your hardware is part of your provisioning profile.
 
 Open your xcode project and run against the hardware.  If this works, you're good to go with:
 
     bin/sample_hardware
 
-## Creating new tests
+## Writing tests
 
 Checkout the iOS project, and select "Product" > "Profile".
 Instruments should launch. Select "Automation" from the "iOS Simulator" section, and click "Profile".
@@ -37,6 +39,8 @@ Perform some actions (you should see JavaScript being recorded in the Instrument
 Copy actions into step_definitions.
 
 Read more here: http://developer.apple.com/library/mac/#documentation/developertools/Conceptual/InstrumentsUserGuide/UsingtheAutomationInstrument/UsingtheAutomationInstrument.html#//apple_ref/doc/uid/TP40004652-CH20-SW1
+
+Scenarios uses tuneup_fs to format tests.  You can see the markup here: or simply use the output from recording in Instruments.
 
 ## Stress-testing
 
