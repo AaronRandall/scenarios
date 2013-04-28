@@ -7,7 +7,11 @@ Record interactions with your iOS app using Instruments, then package the output
 
 Here's what the sample app & test included with this project look like:
 
-Demo here.
+git clone git@github.com:AaronRandall/scenarios.git
+brew install ios-sim
+scenarios/bin/sample_simulator
+
+Demo video here.
 
 ## Prerequisites
 
@@ -16,12 +20,12 @@ You will need:
 * Xcode (tested on 4.6.x)
 * ios-sim ("brew install ios-sim")
 
-## Run the samples app & tests (on a simulator)
+## Run the sample app & tests (on a simulator)
     bin/sample_simulator
 
 (Note that the first time you run the tests you may be asked for your password for developer tools).
 
-## Run the samples app & tests (on hardware)
+## Run the sample app & tests (on hardware)
 To run tests against hardware, first you should make sure your hardware is part of your provisioning profile.
 
 Open your xcode project and run against the hardware.  If this works, you're good to go with:
