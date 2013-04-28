@@ -172,7 +172,9 @@ if options.preprocess or options.run
     preprocessed_file_contents = Preprocessor.process test_script
 
     # include any JavaScript specified from the command line
-    preprocessed_file_contents = options.javascript_to_prepend + preprocessed_file_contents if options.javascript_to_prepend
+    if options.javascript_to_prepend
+      preprocessed_file_contents = options.javascript_to_prepend + preprocessed_file_contents 
+    end
 
     temp_file.write(preprocessed_file_contents)
   end

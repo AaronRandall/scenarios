@@ -16,7 +16,15 @@ ios-sim ("brew install ios-sim")
 ## Run the samples
 bin/run --ios-app-name 'TableViewIOS5Demo' --ios-app-path sample/app/ --tests-path sample/tests/ --tests-output-path sample/output/
 
-Note that the first time you run the tests you may be asked for your password for developer toosl.
+Note that the first time you run the tests you may be asked for your password for developer tools.
+
+## Running the sample on hardware
+To run tests against hardware, first you should make sure your hardware is part of your provisioning profile.
+
+Open your xcode project and run against the hardware.  If this works, you're good to go with:
+
+command here
+
 
 ## Running all tests
 

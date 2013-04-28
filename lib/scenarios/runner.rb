@@ -7,6 +7,7 @@ module Scenarios
   SCENARIOS_SCRIPT_PATH     = SCRIPTS_PATH + 'scenarios.js'
   AUTOMATION_LIBRARY_PATH   = SCRIPTS_PATH + 'automation_library/tuneup/'
   AUTOMATION_LIBRARY_RUNNER = AUTOMATION_LIBRARY_PATH + 'test_runner/run'
+  APP_DEPLOYER              = ROOT + 'app_deployer/transporter_chief.rb'
 
   class Runner
     def initialize(options)
