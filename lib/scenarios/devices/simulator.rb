@@ -13,7 +13,7 @@ module Scenarios
 
       def clean_target
         Logger.log('Deleting any existing simulator apps') 
-        FileUtils.rm_rf(Dir.glob("#{@ops.simulator_path}/*"))
+        FileUtils.rm_rf(Dir.glob("#{simulator_path}/*"))
       end
 
       def install_app
@@ -39,6 +39,24 @@ module Scenarios
           Scenarios.kill_simulator
         end
       end
+
+      private
+
+      def simulator_path
+        @simulator_path ||= find_simulator_path
+      end
+
+      def find_simulator_path
+        iphone_simulator_path = File.expand_path("~/Library/Application\ Support/iPhone\ Simulator/")
+
+        iphone_simulators = Dir.glob("#{iphone_simulator_path}/[0-9]*")
+        if iphone_simulators.size == 0
+          raise RuntimeError, "No iPhone simulators found in #{iphone_simulator_path}"
+        end
+    
+        iphone_simulators.last
+      end
+
     end
   end
 end

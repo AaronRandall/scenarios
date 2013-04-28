@@ -11,8 +11,6 @@ module Scenarios
 
   class Runner
     def initialize(options)
-      options[:simulator_path] = find_simulator_path
-      options[:tests_to_run]   = []
       @ops = OpenStruct.new(options)
     end
 
@@ -35,17 +33,6 @@ module Scenarios
       test_device.clean_target          if @ops.clean_target
       test_device.install_app           if @ops.install_app
       test_device.run_tests
-    end
-
-    def find_simulator_path
-      iphone_simulator_path = File.expand_path("~/Library/Application\ Support/iPhone\ Simulator/")
-
-      iphone_simulators = Dir.glob("#{iphone_simulator_path}/[0-9]*")
-      if iphone_simulators.size == 0
-        raise RuntimeError, "No iPhone simulators found in #{iphone_simulator_path}"
-      end
-  
-      iphone_simulators.last
     end
 
     def find_tests_to_run
@@ -76,6 +63,13 @@ module Scenarios
     # kill any stale simulator processes
     Logger.log('Killing simulator (if running)')
     system "killall 'iPhone Simulator' &> /dev/null"
-  end
 
+    Logger.log('Killing Instrument pids')
+    instrument_pids = `/usr/bin/pgrep -i '^instruments$'`
+    if $? == 0 then
+      instrument_pids.gsub(/\s+/, " ").each do |stale_instrument_pid|
+        `kill -9 #{stale_instrument_pid}`
+      end
+    end
+  end
 end
