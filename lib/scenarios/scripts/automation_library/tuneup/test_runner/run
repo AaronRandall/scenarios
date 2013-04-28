@@ -262,6 +262,7 @@ begin
             end
 
             next if line =~ /Instruments Trace Complete/
+            next if line =~ /ScriptAgent/
 
             outputs.each { |output| output.add(line) }
           end
@@ -306,5 +307,5 @@ if failed || failed?(statistics)
   exit 1
 else
   STDOUT.puts format_statistics(statistics)
-  STDOUT.puts "TEST PASSED"
+  STDOUT.puts "TEST(S) PASSED"
 end

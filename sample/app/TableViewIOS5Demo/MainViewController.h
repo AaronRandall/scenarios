@@ -11,6 +11,7 @@
 #import "ReuseCellWithNibViewController.h"
 #import "MultiEditViewController.h"
 #import "MultipleSelectionViewController.h"
+#import "TextInputViewController.h"
 
 @interface MainViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 {
@@ -20,6 +21,8 @@
     ReuseCellWithNibViewController  *reuseCellViewController;
     MultipleSelectionViewController *multipleSelectionViewController;
     MultiEditViewController         *multiEditViewController;
+    TextInputViewController         *textInputViewController;
+
 }
 @property (nonatomic, strong) IBOutlet UITableView *mainTableView;
 @property (nonatomic, strong) NSMutableArray *contentArray;

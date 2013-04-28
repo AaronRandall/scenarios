@@ -19,7 +19,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     mainViewController = [[MainViewController alloc] init];
-    mainViewController.title = @"What's New?";
+    mainViewController.title = @"Scenarios Demo";
     
     //Add a navigation controller
     navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];

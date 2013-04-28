@@ -32,32 +32,25 @@
     {
         case 0:
         {
-            menuSupportViewController = [[MenuSupportViewController alloc] initWithNibName:@"MenuSupportViewController" bundle:nil];
-            menuSupportViewController.title = [contentArray objectAtIndex:indexPath.row];
-            [super.navigationController pushViewController:menuSupportViewController animated:YES];
+            textInputViewController = [[TextInputViewController alloc] init];
+            textInputViewController.title = [contentArray objectAtIndex:indexPath.row];
+            [super.navigationController pushViewController:textInputViewController animated:YES];
             break;
         }
         case 1:
-        {
-            reuseCellViewController = [[ReuseCellWithNibViewController alloc] init];
-            reuseCellViewController.title = [contentArray objectAtIndex:indexPath.row];
-            [super.navigationController pushViewController:reuseCellViewController animated:YES];
-            break;
-        }
-        case 2:
-        {
-            multipleSelectionViewController = [[MultipleSelectionViewController alloc] init];
+        {multipleSelectionViewController = [[MultipleSelectionViewController alloc] init];
             multipleSelectionViewController.title = [contentArray objectAtIndex:indexPath.row];
             [super.navigationController pushViewController:multipleSelectionViewController animated:YES];
             break;
+            
         }
-        case 3:
+        case 2:
         {
             multiEditViewController = [[MultiEditViewController alloc] init];
             multiEditViewController.title = [contentArray objectAtIndex:indexPath.row];
             [super.navigationController pushViewController:multiEditViewController animated:YES];
             break;
-        }            
+        }          
         default:
             break;
     }
@@ -84,10 +77,9 @@
 {
     [super viewDidLoad];
     contentArray = [[NSMutableArray alloc] init];
-    [self.contentArray addObject: @"Menu Support Demo"];
-    [self.contentArray addObject: @"Reuse Nibs Demo"];
-    [self.contentArray addObject: @"Multi Selection Demo"];
-    [self.contentArray addObject: @"Multi Edit Demo"];
+    [self.contentArray addObject: @"Form Control Demo"];
+    [self.contentArray addObject: @"Multi-Selection Demo"];
+    [self.contentArray addObject: @"TableView Demo"];
 }
 
 - (void)viewDidUnload
