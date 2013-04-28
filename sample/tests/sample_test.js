@@ -1,7 +1,5 @@
 #import "support/scenarios.js"
 
-UIALogger.logMessage("[INFO]: " + "STARTING TESTING");
-
 test("Remove items from list", function(target, app) {
   target.frontMostApp().mainWindow().tableViews()["Empty list"].cells()["Multi Edit Demo"].tap();
   target.frontMostApp().navigationBar().rightButton().tap();

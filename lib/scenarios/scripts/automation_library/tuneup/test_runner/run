@@ -10,6 +10,10 @@ require File.expand_path(File.join(File.dirname(__FILE__), "console_output"))
 require File.expand_path(File.join(File.dirname(__FILE__), "colored_console_output"))
 require File.expand_path(File.join(File.dirname(__FILE__), "xunit_output"))
 
+def warn(message)
+  puts "[WARN]: #{message}"
+end
+
 options = OpenStruct.new
 options.env_vars = {}
 
@@ -120,7 +124,7 @@ end
 # Check for already running instrument processes
 instrument_pids = `/usr/bin/pgrep -i '^instruments$'`
 if $? == 0 then
-  warn "\n### There are other 'instrument' processes running that may interfere - consider terminating them first:\nkill -9 " +
+  warn "There are other 'instrument' processes running that may interfere - consider terminating them first:\nkill -9 " +
     instrument_pids.gsub(/\s+/, " ")
 end
 
@@ -250,13 +254,13 @@ begin
             outputs.each { |output| output.add(line) }
 
             # This is a workaround for Instruments requiring a password.
-            # It sucks, but I haven't found a better solution yet.
+            # It REALLY sucks, but I haven't found a better solution yet.
             if line =~ /Instruments wants permission to analyze other processes. Type your password to allow this/i 
               w.write("\n")
             end
 
-            if line =~ /Name \(jenkins\)\:/i
-              w.write("s0ngk1ck\n")
+            if line =~ /Name \(YOUR_USERNAME\)\:/i
+              w.write("YOUR_PASSWORD\n")
             end
 
           end
@@ -264,7 +268,7 @@ begin
           failed = true if line =~ /Instruments Trace Error/i
         else
           failed = true
-          warn "\n### Timeout #{options.timeout} reached without any output - " +
+          warn "Timeout #{options.timeout} reached without any output - " +
             "killing Instruments (pid #{pid})..."
           begin
             Process.kill(9, pid)

@@ -12,8 +12,9 @@ module Scenarios
       end
 
       def clean_target
-        # Nothing to do here as the ability to delete 
-        # apps from devices is not currently supported
+        # Simulator installs interfere with hardware builds, so delete them
+        Logger.log('Deleting any existing simulator apps') 
+        FileUtils.rm_rf(Dir.glob("#{@ops.simulator_path}/*"))
       end
 
       def install_app

@@ -119,7 +119,6 @@ if path_to_app != nil && File.exist?(path_to_app)
     device_id_string = options.device_id == nil ? "" : " #{options.device_id}"
     device_id_parameter = options.device_id == nil ? "" : "-i #{options.device_id}"
 
-    log "Beaming app to device#{device_id_string}"
     execute("#{$fruitstrap_executable} #{device_id_parameter} -b '#{path_to_app}'", options.verbose)
     if $? != 0
       fail "Unable to deploy app to device. Run verbose to get a more specific error message"
@@ -131,4 +130,3 @@ if path_to_app != nil && File.exist?(path_to_app)
 end
 
 purge_temp
-log "All done"
