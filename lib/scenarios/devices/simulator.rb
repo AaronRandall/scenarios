@@ -3,8 +3,9 @@ module Scenarios
     require 'fileutils'
 
     class Simulator
-      def initialize(options)
+      def initialize(options, tests_to_run)
         @ops = options
+        @tests_to_run = tests_to_run
       end
 
       def sdk
@@ -26,17 +27,14 @@ module Scenarios
 
       def run_tests
         Logger.log('Running tests')
-        @ops.tests_to_run.each do |test|
+        @tests_to_run.each do |test|
           command_to_run = "#{AUTOMATION_LIBRARY_RUNNER} '#{@ops.ios_app_name}' #{test} '#{@ops.tests_output_path}' #{'-d dynamic' if @ops.run_on_device} -p -j '#{@ops.test_variables}'"
           Logger.log( "Running test #{test} (#{command_to_run})")
           system command_to_run
 
           if $? != 0
-            Scenarios.kill_simulator
             raise "[ERROR: Test '#{test}' failed" and return
           end
-
-          Scenarios.kill_simulator
         end
       end
 

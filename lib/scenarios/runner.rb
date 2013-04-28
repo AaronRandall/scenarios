@@ -1,7 +1,7 @@
 module Scenarios
+  require 'ostruct'
   require ROOT + 'devices'
   require ROOT + 'project'
-  require 'ostruct'
 
   SCRIPTS_PATH              = ROOT + 'scripts/'
   SCENARIOS_SCRIPT_PATH     = SCRIPTS_PATH + 'scenarios.js'
@@ -15,18 +15,13 @@ module Scenarios
     end
 
     def run
-      @ops.tests_to_run = find_tests_to_run
-      test_device = get_test_device
-      project     = Project.new(@ops, test_device)
-
+      project = Project.new(@ops, test_device)
       run_test_steps(test_device, project) 
     end
 
     private
 
     def run_test_steps(test_device, project)
-      Scenarios.kill_simulator
-
       project.create_test_support_files
       project.clean_build_directory     if @ops.clean_project_build_directory
       project.build_app                 if @ops.build_app
@@ -35,8 +30,17 @@ module Scenarios
       test_device.run_tests
     end
 
-    def find_tests_to_run
+    def test_device
+      if @ops.run_on_hardware or @ops.hardware_id
+        test_device = Devices::Hardware.new(@ops, tests_to_run)
+      else
+        test_device = Devices::Simulator.new(@ops, tests_to_run)
+      end
+    end
+
+    def tests_to_run
       tests_to_run = []
+
       if @ops.test_name
         tests_to_run.push("#{@ops.tests_path}/#{@ops.test_name}")
       else
@@ -49,22 +53,13 @@ module Scenarios
 
       tests_to_run
     end
-
-    def get_test_device
-      if @ops.run_on_hardware or @ops.hardware_id
-        test_device = Devices::Hardware.new(@ops)
-      else
-        test_device = Devices::Simulator.new(@ops)
-      end
-    end
   end
 
   def self.kill_simulator
-    # kill any stale simulator processes
-    Logger.log('Killing simulator (if running)')
+    # kill any stale simulator and Instrument processes
+    Logger.log('Killing simulator and Instruments')
     system "killall 'iPhone Simulator' &> /dev/null"
 
-    Logger.log('Killing Instrument pids')
     instrument_pids = `/usr/bin/pgrep -i '^instruments$'`
     if $? == 0 then
       instrument_pids.gsub(/\s+/, " ").each do |stale_instrument_pid|
