@@ -16,10 +16,8 @@ module Scenarios
 
     def run
       Scenarios.kill_simulator
-
       test_device = Device.new(@ops, tests_to_run)
       project     = Project.new(@ops, test_device)
-
       run_test_steps(test_device, project) 
     end
 
