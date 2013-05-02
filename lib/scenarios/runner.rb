@@ -1,6 +1,6 @@
 module Scenarios
   require 'ostruct'
-  require ROOT + 'devices'
+  require ROOT + 'device'
   require ROOT + 'project'
 
   SCRIPTS_PATH              = ROOT + 'scripts/'
@@ -16,7 +16,10 @@ module Scenarios
 
     def run
       Scenarios.kill_simulator
-      project = Project.new(@ops, test_device)
+
+      test_device = Device.new(@ops, tests_to_run)
+      project     = Project.new(@ops, test_device)
+
       run_test_steps(test_device, project) 
     end
 
@@ -29,14 +32,6 @@ module Scenarios
       test_device.clean_target          if @ops.clean_target
       test_device.install_app           if @ops.install_app
       test_device.run_tests
-    end
-
-    def test_device
-      if @ops.run_on_hardware or @ops.hardware_id
-        test_device = Devices::Hardware.new(@ops, tests_to_run)
-      else
-        test_device = Devices::Simulator.new(@ops, tests_to_run)
-      end
     end
 
     def tests_to_run
