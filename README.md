@@ -20,6 +20,8 @@ You will need:
 * Xcode (tested on 4.6.x)
 * ios-sim ("brew install ios-sim")
 
+You'll need Xcode's Command Line Tools installed. From Xcode, install via Xcode → Preferences → Downloads.
+
 ## Run the sample app & tests (on a simulator)
     bin/sample_simulator
 
