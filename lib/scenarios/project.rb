@@ -31,6 +31,7 @@ module Scenarios
 
       # Copy all automation library .js files to the tests support folder
       FileUtils.cp(SCENARIOS_SCRIPT_PATH, support_dir)
+      FileUtils.cp(HELPERS_SCRIPT_PATH,   support_dir)
       FileUtils.cp_r(AUTOMATION_LIBRARY_PATH, support_automation_dir)
     end
 

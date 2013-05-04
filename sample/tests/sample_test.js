@@ -1,17 +1,19 @@
 #import "support/scenarios.js"
 
 test("Login using username and password", function(target, app) {
-  app.mainWindow().tableViews()["Empty list"].cells()["Form Control Demo"].tap();
-  app.mainWindow().textFields()["Username"].tap();
-  app.keyboard().typeString("RonSwanson");
-  app.mainWindow().secureTextFields()["Password"].tap();
-  app.keyboard().typeString("mypassword\n");
-  app.mainWindow().buttons()["Login"].tap();
-  UIATarget.onAlert = function onAlert(alert) {
-    alert.buttons()["OK"].tap();
-    return true;
-  }
-  app.navigationBar().leftButton().tap();
+    app.mainWindow().tableViews()["Empty list"].cells()["Form Control Demo"].tap();
+    app.mainWindow().textFields()["Username"].tap();
+    app.keyboard().typeString("RonSwanson");
+    app.mainWindow().secureTextFields()["Password"].tap();
+    app.keyboard().typeString("mypassword\n");
+    app.mainWindow().buttons()["Login"].tap();
+    throttle(function (){
+      UIATarget.onAlert = function onAlert(alert) {
+        alert.buttons()["OK"].tap();
+        return true;
+      }
+    });
+    app.navigationBar().leftButton().tap();
 })
 
 test("Multi-select list items", function(target, app) {

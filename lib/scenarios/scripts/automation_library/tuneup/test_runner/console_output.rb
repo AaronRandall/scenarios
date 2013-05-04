@@ -11,6 +11,7 @@ class ConsoleOutput
   def add_minimal_status(status, date, time, time_zone, msg)
     print '.' if status == :pass 
     print 'F' if status == :fail 
+    puts msg if status == :default 
   end
   
   def format(status, date, time, time_zone, msg)

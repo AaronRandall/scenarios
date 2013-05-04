@@ -257,8 +257,8 @@ begin
               w.write("\n")
             end
 
-            if line =~ /Name \(YOUR_USERNAME\)\:/i
-              w.write("YOUR_PASSWORD\n")
+            if line =~ /Name \(BUILD_USERNAME\)\:/i
+              w.write("BUILD_PASSWORD\n")
             end
 
             next if line =~ /Instruments Trace Complete/
