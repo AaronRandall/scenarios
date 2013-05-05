@@ -1,6 +1,1 @@
-add js test helper methods, e.g. run with timeout, log (at different levels), step delay (throttling)
-remove unused runner options
-
-Changes after discussion with Jcog:
-* keep JS tests top-level (with test fn names), and move details into functions in step_definition files.
-* check that test devices implement required methods before using
+demo vid
