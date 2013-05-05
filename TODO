@@ -1,9 +1,5 @@
 add js test helper methods, e.g. run with timeout, log (at different levels), step delay (throttling)
-customise app to have text input
-rename app project
 remove unused runner options
-detact iOS sdk version for hardware device (see hardware.rb, def build_app)
-
 
 Changes after discussion with Jcog:
 * keep JS tests top-level (with test fn names), and move details into functions in step_definition files.

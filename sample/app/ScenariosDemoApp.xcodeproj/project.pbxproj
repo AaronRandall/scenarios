@@ -30,14 +30,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4B3209DD1477F43600E7E441 /* TableViewIOS5Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewIOS5Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B3209DD1477F43600E7E441 /* ScenariosDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScenariosDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B3209E11477F43600E7E441 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4B3209E31477F43600E7E441 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4B3209E51477F43600E7E441 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		4B3209E91477F43600E7E441 /* TableViewIOS5Demo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TableViewIOS5Demo-Info.plist"; sourceTree = "<group>"; };
+		4B3209E91477F43600E7E441 /* ScenariosDemoApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ScenariosDemoApp-Info.plist"; sourceTree = "<group>"; };
 		4B3209EB1477F43600E7E441 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4B3209ED1477F43600E7E441 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4B3209EF1477F43600E7E441 /* TableViewIOS5Demo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TableViewIOS5Demo-Prefix.pch"; sourceTree = "<group>"; };
+		4B3209EF1477F43600E7E441 /* ScenariosDemoApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScenariosDemoApp-Prefix.pch"; sourceTree = "<group>"; };
 		4B3209F01477F43600E7E441 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4B3209F11477F43600E7E441 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4B3209FE1477F69400E7E441 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		4B3209DE1477F43600E7E441 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4B3209DD1477F43600E7E441 /* TableViewIOS5Demo.app */,
+				4B3209DD1477F43600E7E441 /* ScenariosDemoApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,10 +117,10 @@
 		4B3209E81477F43600E7E441 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4B3209E91477F43600E7E441 /* TableViewIOS5Demo-Info.plist */,
+				4B3209E91477F43600E7E441 /* ScenariosDemoApp-Info.plist */,
 				4B3209EA1477F43600E7E441 /* InfoPlist.strings */,
 				4B3209ED1477F43600E7E441 /* main.m */,
-				4B3209EF1477F43600E7E441 /* TableViewIOS5Demo-Prefix.pch */,
+				4B3209EF1477F43600E7E441 /* ScenariosDemoApp-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -197,9 +197,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4B3209DC1477F43600E7E441 /* TableViewIOS5Demo */ = {
+		4B3209DC1477F43600E7E441 /* ScenariosDemoApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4B3209F51477F43600E7E441 /* Build configuration list for PBXNativeTarget "TableViewIOS5Demo" */;
+			buildConfigurationList = 4B3209F51477F43600E7E441 /* Build configuration list for PBXNativeTarget "ScenariosDemoApp" */;
 			buildPhases = (
 				4B3209D91477F43600E7E441 /* Sources */,
 				4B3209DA1477F43600E7E441 /* Frameworks */,
@@ -209,9 +209,9 @@
 			);
 			dependencies = (
 			);
-			name = TableViewIOS5Demo;
+			name = ScenariosDemoApp;
 			productName = TableViewIOS5Demo;
-			productReference = 4B3209DD1477F43600E7E441 /* TableViewIOS5Demo.app */;
+			productReference = 4B3209DD1477F43600E7E441 /* ScenariosDemoApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -222,7 +222,7 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 			};
-			buildConfigurationList = 4B3209D71477F43600E7E441 /* Build configuration list for PBXProject "TableViewIOS5Demo" */;
+			buildConfigurationList = 4B3209D71477F43600E7E441 /* Build configuration list for PBXProject "ScenariosDemoApp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -234,7 +234,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4B3209DC1477F43600E7E441 /* TableViewIOS5Demo */,
+				4B3209DC1477F43600E7E441 /* ScenariosDemoApp */,
 			);
 		};
 /* End PBXProject section */
@@ -337,9 +337,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TableViewIOS5Demo/TableViewIOS5Demo-Prefix.pch";
-				INFOPLIST_FILE = "TableViewIOS5Demo/TableViewIOS5Demo-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "TableViewIOS5Demo/ScenariosDemoApp-Prefix.pch";
+				INFOPLIST_FILE = "TableViewIOS5Demo/ScenariosDemoApp-Info.plist";
+				PRODUCT_NAME = ScenariosDemoApp;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -348,9 +348,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TableViewIOS5Demo/TableViewIOS5Demo-Prefix.pch";
-				INFOPLIST_FILE = "TableViewIOS5Demo/TableViewIOS5Demo-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "TableViewIOS5Demo/ScenariosDemoApp-Prefix.pch";
+				INFOPLIST_FILE = "TableViewIOS5Demo/ScenariosDemoApp-Info.plist";
+				PRODUCT_NAME = ScenariosDemoApp;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -358,7 +358,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4B3209D71477F43600E7E441 /* Build configuration list for PBXProject "TableViewIOS5Demo" */ = {
+		4B3209D71477F43600E7E441 /* Build configuration list for PBXProject "ScenariosDemoApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B3209F31477F43600E7E441 /* Debug */,
@@ -367,7 +367,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4B3209F51477F43600E7E441 /* Build configuration list for PBXNativeTarget "TableViewIOS5Demo" */ = {
+		4B3209F51477F43600E7E441 /* Build configuration list for PBXNativeTarget "ScenariosDemoApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B3209F61477F43600E7E441 /* Debug */,

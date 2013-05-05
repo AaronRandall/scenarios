@@ -1,0 +1,1 @@
+bin/run --ios-app-name 'ScenariosDemoApp' --ios-app-path sample/app/ --tests-path sample/tests/ --tests-output-path sample/output/ -r

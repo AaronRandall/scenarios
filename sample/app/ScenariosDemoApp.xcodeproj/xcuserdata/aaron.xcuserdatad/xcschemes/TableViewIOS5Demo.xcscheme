@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4B3209DC1477F43600E7E441"
                BuildableName = "TableViewIOS5Demo.app"
-               BlueprintName = "TableViewIOS5Demo"
-               ReferencedContainer = "container:TableViewIOS5Demo.xcodeproj">
+               BlueprintName = "ScenariosDemoApp"
+               ReferencedContainer = "container:ScenariosDemoApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4B3209DC1477F43600E7E441"
             BuildableName = "TableViewIOS5Demo.app"
-            BlueprintName = "TableViewIOS5Demo"
-            ReferencedContainer = "container:TableViewIOS5Demo.xcodeproj">
+            BlueprintName = "ScenariosDemoApp"
+            ReferencedContainer = "container:ScenariosDemoApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,8 +53,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4B3209DC1477F43600E7E441"
             BuildableName = "TableViewIOS5Demo.app"
-            BlueprintName = "TableViewIOS5Demo"
-            ReferencedContainer = "container:TableViewIOS5Demo.xcodeproj">
+            BlueprintName = "ScenariosDemoApp"
+            ReferencedContainer = "container:ScenariosDemoApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,8 +71,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4B3209DC1477F43600E7E441"
             BuildableName = "TableViewIOS5Demo.app"
-            BlueprintName = "TableViewIOS5Demo"
-            ReferencedContainer = "container:TableViewIOS5Demo.xcodeproj">
+            BlueprintName = "ScenariosDemoApp"
+            ReferencedContainer = "container:ScenariosDemoApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
