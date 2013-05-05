@@ -20,13 +20,14 @@ module Scenarios
       test_device = Device.new(@ops, tests_to_run)
       project     = Project.new(@ops, test_device)
       run_test_steps(test_device, project) 
+      Scenarios.kill_simulator
     end
 
     private
 
     def run_test_steps(test_device, project)
-      project.create_test_support_files
-      project.clean_build_directory     if @ops.clean_project_build_directory
+      project.create_test_support_files if @ops.create_test_support_files
+      project.clean_build_directory     if @ops.clean_build_directory
       project.build_app                 if @ops.build_app
       test_device.clean_target          if @ops.clean_target
       test_device.install_app           if @ops.install_app
@@ -52,7 +53,6 @@ module Scenarios
 
   def self.kill_simulator
     # kill any stale simulator and Instrument processes
-    Logger.log('Killing simulator and Instruments')
     system "killall 'iPhone Simulator' &> /dev/null"
 
     instrument_pids = `/usr/bin/pgrep -i '^instruments$'`

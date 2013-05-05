@@ -1,2 +1,4 @@
-bin/run --ios-app-name 'ScenariosDemoApp' --ios-app-path sample/app/ --tests-path sample/tests/ --tests-output-path sample/output/
+#!/bin/bash
+cd "$(dirname ${BASH_SOURCE[0]})"
 
+./run --ios-app-name 'ScenariosDemoApp' --ios-app-path ../sample/app/ --tests-path ../sample/tests/ --tests-output-path ../sample/output/

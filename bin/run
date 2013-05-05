@@ -29,10 +29,13 @@ opts = Trollop::options do
   opt :test_variables, 
     "JavaScript variables to pass to tests (e.g. username/password information).", 
     :type => :string, :default => nil
+  opt :create_test_support_files, 
+    "Create the test support folder before running tests", 
+    :type => :boolean, :default => true
   opt :clean_target, 
     "Clean the target test device before running tests", 
     :type => :boolean, :default => true
-  opt :clean_project_build_directory, 
+  opt :clean_build_directory, 
     "Clean the Xcode project build directory before running tests", 
     :type => :boolean, :default => true
   opt :build_app, 
