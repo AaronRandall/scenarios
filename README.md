@@ -5,14 +5,14 @@ Scenarios (Scenar-iOS, geddit?) is an application that handles running iOS accep
 
 Record interactions with your iOS app using Instruments, then package the output as tests.  Scenarios enables you to easily run a collection of tests against simulated and real app installs, and can be used ad-hoc, or connected to a continuous integration server.
 
-Here's what the sample app & test included with this project look like:
+Here's what the sample app & tests included with this project look like running on a simulator and iPhone:
 
 Demo video here.
 
 ## Prerequisites
 
 You will need:
-* A mac
+* A Mac
 * Xcode (tested on 4.6)
 
 ## Installation

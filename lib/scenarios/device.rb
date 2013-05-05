@@ -1,6 +1,7 @@
 module Scenarios
   class Device
-    require ROOT + 'devices'
+    require ROOT + 'devices/simulator'
+    require ROOT + 'devices/hardware'
 
     def self.new(options, tests_to_run)
       @ops = options
