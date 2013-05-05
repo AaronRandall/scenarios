@@ -83,7 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				93375DDD1736972A001D6F1F /* Default-568h@2x.png */,
-				4B3209E71477F43600E7E441 /* TableViewIOS5Demo */,
+				4B3209E71477F43600E7E441 /* ScenariosDemoApp */,
 				4B3209E01477F43600E7E441 /* Frameworks */,
 				4B3209DE1477F43600E7E441 /* Products */,
 			);
@@ -107,14 +107,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4B3209E71477F43600E7E441 /* TableViewIOS5Demo */ = {
+		4B3209E71477F43600E7E441 /* ScenariosDemoApp */ = {
 			isa = PBXGroup;
 			children = (
 				4B3209F91477F44700E7E441 /* Resources */,
 				4B3209F81477F43F00E7E441 /* Classes */,
 				4B3209E81477F43600E7E441 /* Supporting Files */,
 			);
-			path = TableViewIOS5Demo;
+			name = ScenariosDemoApp;
+			path = ScenariosDemoApp;
 			sourceTree = "<group>";
 		};
 		4B3209E81477F43600E7E441 /* Supporting Files */ = {
@@ -213,7 +214,7 @@
 			dependencies = (
 			);
 			name = ScenariosDemoApp;
-			productName = TableViewIOS5Demo;
+			productName = ScenariosDemoApp;
 			productReference = 4B3209DD1477F43600E7E441 /* ScenariosDemoApp.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -341,8 +342,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TableViewIOS5Demo/ScenariosDemoApp-Prefix.pch";
-				INFOPLIST_FILE = "TableViewIOS5Demo/ScenariosDemoApp-Info.plist";
+				GCC_PREFIX_HEADER = "ScenariosDemoApp/ScenariosDemoApp-Prefix.pch";
+				INFOPLIST_FILE = "ScenariosDemoApp/ScenariosDemoApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = ScenariosDemoApp;
 				WRAPPER_EXTENSION = app;
@@ -353,8 +354,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TableViewIOS5Demo/ScenariosDemoApp-Prefix.pch";
-				INFOPLIST_FILE = "TableViewIOS5Demo/ScenariosDemoApp-Info.plist";
+				GCC_PREFIX_HEADER = "ScenariosDemoApp/ScenariosDemoApp-Prefix.pch";
+				INFOPLIST_FILE = "ScenariosDemoApp/ScenariosDemoApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = ScenariosDemoApp;
 				WRAPPER_EXTENSION = app;

@@ -13,7 +13,7 @@ module Scenarios
       end
 
       def clean_target
-        # Nothing to do here as the ability to delete app
+        # Nothing to do here as the ability to delete apps
         # from hardware devices is currently not supported
       end
 
