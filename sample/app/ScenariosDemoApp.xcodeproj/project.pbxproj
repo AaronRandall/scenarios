@@ -25,6 +25,7 @@
 		4B320A161477FA5A00E7E441 /* MultipleSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B320A141477FA5900E7E441 /* MultipleSelectionViewController.xib */; };
 		4B320A201478099300E7E441 /* ReusableCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B320A1F1478099300E7E441 /* ReusableCustomCell.m */; };
 		4B320A2214780A6D00E7E441 /* ReusableCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B320A2114780A6D00E7E441 /* ReusableCustomCell.xib */; };
+		93375DDE1736972A001D6F1F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93375DDD1736972A001D6F1F /* Default-568h@2x.png */; };
 		93E3A23F172DA5D3003A768C /* TextInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93E3A23E172DA5D3003A768C /* TextInputViewController.xib */; };
 		93E3A242172DA64F003A768C /* TextInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E3A241172DA64F003A768C /* TextInputViewController.m */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		4B320A1E1478099300E7E441 /* ReusableCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReusableCustomCell.h; sourceTree = "<group>"; };
 		4B320A1F1478099300E7E441 /* ReusableCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReusableCustomCell.m; sourceTree = "<group>"; };
 		4B320A2114780A6D00E7E441 /* ReusableCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReusableCustomCell.xib; sourceTree = "<group>"; };
+		93375DDD1736972A001D6F1F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		93E3A23E172DA5D3003A768C /* TextInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextInputViewController.xib; sourceTree = "<group>"; };
 		93E3A240172DA64F003A768C /* TextInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextInputViewController.h; sourceTree = "<group>"; };
 		93E3A241172DA64F003A768C /* TextInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextInputViewController.m; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		4B3209D21477F43600E7E441 = {
 			isa = PBXGroup;
 			children = (
+				93375DDD1736972A001D6F1F /* Default-568h@2x.png */,
 				4B3209E71477F43600E7E441 /* TableViewIOS5Demo */,
 				4B3209E01477F43600E7E441 /* Frameworks */,
 				4B3209DE1477F43600E7E441 /* Products */,
@@ -252,6 +255,7 @@
 				4B320A161477FA5A00E7E441 /* MultipleSelectionViewController.xib in Resources */,
 				4B320A2214780A6D00E7E441 /* ReusableCustomCell.xib in Resources */,
 				93E3A23F172DA5D3003A768C /* TextInputViewController.xib in Resources */,
+				93375DDE1736972A001D6F1F /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +343,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TableViewIOS5Demo/ScenariosDemoApp-Prefix.pch";
 				INFOPLIST_FILE = "TableViewIOS5Demo/ScenariosDemoApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = ScenariosDemoApp;
 				WRAPPER_EXTENSION = app;
 			};
@@ -350,6 +355,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TableViewIOS5Demo/ScenariosDemoApp-Prefix.pch";
 				INFOPLIST_FILE = "TableViewIOS5Demo/ScenariosDemoApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = ScenariosDemoApp;
 				WRAPPER_EXTENSION = app;
 			};

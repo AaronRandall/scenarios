@@ -90,9 +90,9 @@
     if(editing)
     {
         [self.editableTableView setEditing:YES animated:YES];
-        
+      
         //Make a toolbar and add it to the view
-        UIToolbar *bottomToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 480-44-44-20, 320, 44)];
+        UIToolbar *bottomToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height-44-44-20, 320, 44)];
         bottomToolbar.tag = 1001;
         
         //Add a delete button to the toolbar
