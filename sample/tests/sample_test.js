@@ -29,12 +29,16 @@ test("Multi-select list items", function(target, app) {
 })
 
 test("Remove items from a TableView", function(target, app) {
-  app.mainWindow().tableViews()["Empty list"].cells()["TableView Demo"].tap();
-  app.navigationBar().rightButton().tap();
-  app.mainWindow().tableViews()["Empty list"].cells()["One"].tap();
-  app.mainWindow().tableViews()["Empty list"].cells()["Two"].tap();
-  app.toolbar().buttons()["Delete"].tap();
-  app.navigationBar().rightButton().tap();
-  app.navigationBar().leftButton().tap();
+  throttle(target, app, function() {
+    app.mainWindow().tableViews()["Empty list"].cells()["TableView Demo"].tap();
+    app.navigationBar().rightButton().tap();
+    app.mainWindow().tableViews()["Empty list"].cells()["One"].tap();
+    app.mainWindow().tableViews()["Empty list"].cells()["Two"].tap();
+    app.toolbar().buttons()["Delete"].tap();
+    app.navigationBar().rightButton().tap();
+    app.navigationBar().leftButton().tap();
+  });
+
+  delay();
 })
 
