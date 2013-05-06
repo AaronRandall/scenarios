@@ -21,7 +21,7 @@ module Scenarios
         Logger.log('Installing and launching in simulator')
         system "ios-sim launch '#{@ops.ios_app_path}/build/Debug-iphonesimulator/#{@ops.ios_app_name}.app' &"
 
-        Logger.log('Waiting for App to launch')
+        Logger.log('Waiting for app to launch')
         sleep 20
       end
 

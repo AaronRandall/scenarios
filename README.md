@@ -18,18 +18,26 @@ You will need:
 ## Installation
 
 * Ensure you have the Xcode command line tools package installed: 
+
     from Xcode → Preferences → Downloads → Command Line Tools → Install
+
 * Install ios-sim via [Homebrew](http://mxcl.github.io/homebrew/): 
+
     brew install ios-sim
 
-## Run the sample app & tests on a simulator
-The first time you run the tests you may be asked for your password for developer tools.
+* Check-out Scenarios:
+
+    git clone git@github.com:AaronRandall/scenarios.git
+
+## Run the example app on a simulator
+From a terminal, run:
 
     scenarios/bin/simulator_example
 
+The first time you run the tests you may be asked for your password for developer tools.
 
-## Run the sample app & tests on hardware
-To run tests against hardware, first you should make sure your hardware is part of your provisioning profile, and then run:
+## Run the example app on hardware
+To run tests against hardware, first you should make sure your hardware is part of your provisioning profile, and then from a terminal, run:
 
     scenarios/bin/hardware_example
 
