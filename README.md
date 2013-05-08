@@ -88,6 +88,12 @@ Read more here: http://developer.apple.com/library/mac/#documentation/developert
 ### Manually writing tests
 Tuneup_js is JavaScript library which builds upon the UIAutomation library provided by Apple.  You can read more about the project and supported assertions here: https://github.com/alexvollmer/tuneup_js
 
+### Additions to tuneup_js
+Alongside the tuneup_js library, Scenarios also adds two new test features:
+
+withTimout: use this for potentially long-running calls (e.g. a button click to login, where the API may be slow)
+slowTap();  Allows for slowing-down the speed at which taps are executed.  This helps to a) see what tests are doing, b) help mimic human behaviour (those tests can move pretty fast!)
+
 ## Running tests
 
 To run the tests on a simulator, run the following (substituting as required):
