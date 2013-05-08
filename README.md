@@ -1,7 +1,7 @@
 # Scenarios - iOS Acceptance Testing
 
 ## Overview
-Scenarios (Scenar-iOS, geddit?) is an application that handles running acceptance tests for iOS apps, on a simulator or physical device. 
+Scenarios (Scenar-iOS, see what I did there...) is an application that handles running acceptance tests for iOS apps, on a simulator or physical device. 
 
 Record interactions with your iOS app using Instruments, then package the output as tests.  Scenarios enables you to easily run a collection of tests against simulated and hardware app installs, and can be used ad-hoc, or connected to a continuous integration server.
 
@@ -19,7 +19,7 @@ You will need:
 
 Ensure you have the Xcode command line tools package installed: 
 
-    from Xcode → Preferences → Downloads → Command Line Tools → Install
+    Xcode → Preferences → Downloads → Command Line Tools → Install
 
 Install ios-sim via [Homebrew](http://mxcl.github.io/homebrew/): 
 
@@ -41,8 +41,24 @@ To run tests against hardware, first you should make sure your hardware is part 
 
     scenarios/bin/hardware_example
 
-## Writing tests
+# Setting up Scenarios with your project #
+If you've successfully installed Scenarios, run the samples, and decided you'd like to use it with your project, perform the following: 
 
+## Project structure
+Scenarios requires two folders to exist:
+
+* A folder to contain test files
+* A folder to record the output of test runs
+
+These folders can be created anywhere, the Scenarios runner will take the paths of these two folders as inputs.  For example, create a 'tests' and 'output' folder in your existing project:
+
+mkdir my_application/tests
+mkdir my_application/tests/output
+
+## Creating tests
+Scenarios supports tests written using Apple's UI Automation JavaScript library, and tuneup_js.
+
+**Automatically generating tests**
 Checkout the iOS project, and select "Product" > "Profile".
 Instruments should launch. Select "Automation" from the "iOS Simulator" section, and click "Profile".
 Under "Choose Target", select "Choose Target" > "AppName".
@@ -53,7 +69,11 @@ Copy actions into step_definitions.
 
 Read more here: http://developer.apple.com/library/mac/#documentation/developertools/Conceptual/InstrumentsUserGuide/UsingtheAutomationInstrument/UsingtheAutomationInstrument.html#//apple_ref/doc/uid/TP40004652-CH20-SW1
 
-Scenarios uses tuneup_fs to format tests.  You can see the markup here: or simply use the output from recording in Instruments.
+**Manually writing tests**
+Tuneup_js is JavaScript library which builds upon the UIAutomation library provided by Apple.  You can read more about the project and supported assertions here: https://github.com/alexvollmer/tuneup_js
+
+## Running tests
+
 
 ## Stress-testing
 
