@@ -42,7 +42,7 @@ To run tests against hardware, ensure that your device is correctly setup with a
     scenarios/bin/hardware_example
 
 # Setting up Scenarios with your project #
-If you've successfully installed Scenarios, run the samples, and decided you'd like to use it with your project, complete the following steps:
+If you've successfully installed Scenarios, run the samples, and decided you'd like to use it with your project, complete the following:
 
 ## Project structure
 Scenarios requires two folders to exist:
@@ -85,7 +85,7 @@ Copy actions into step_definitions.
 
 Read more here: http://developer.apple.com/library/mac/#documentation/developertools/Conceptual/InstrumentsUserGuide/UsingtheAutomationInstrument/UsingtheAutomationInstrument.html#//apple_ref/doc/uid/TP40004652-CH20-SW1
 
-**Manually writing tests**
+### Manually writing tests
 Tuneup_js is JavaScript library which builds upon the UIAutomation library provided by Apple.  You can read more about the project and supported assertions here: https://github.com/alexvollmer/tuneup_js
 
 ## Running tests
