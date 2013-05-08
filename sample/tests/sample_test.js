@@ -19,25 +19,21 @@ test("Login using username and password", function(target, app) {
 })
 
 test("Multi-select list items", function(target, app) {
-  throttle(target, app, function() {
-    app.mainWindow().tableViews()["Empty list"].cells()["Multi-Selection Demo"].tap();
-    app.mainWindow().tableViews()["Empty list"].cells()["Select me"].tap();
-    app.mainWindow().tableViews()["Empty list"].cells()["And me"].tap();
-    app.mainWindow().tableViews()["Empty list"].cells()["And me too"].tap();
-    app.navigationBar().leftButton().tap();
-  });
+  app.mainWindow().tableViews()["Empty list"].cells()["Multi-Selection Demo"].slowTap();
+  app.mainWindow().tableViews()["Empty list"].cells()["Select me"].slowTap();
+  app.mainWindow().tableViews()["Empty list"].cells()["And me"].slowTap();
+  app.mainWindow().tableViews()["Empty list"].cells()["And me too"].slowTap();
+  app.navigationBar().leftButton().tap();
 })
 
 test("Remove items from a TableView", function(target, app) {
-  throttle(target, app, function() {
-    app.mainWindow().tableViews()["Empty list"].cells()["TableView Demo"].tap();
-    app.navigationBar().rightButton().tap();
-    app.mainWindow().tableViews()["Empty list"].cells()["One"].tap();
-    app.mainWindow().tableViews()["Empty list"].cells()["Two"].tap();
-    app.toolbar().buttons()["Delete"].tap();
-    app.navigationBar().rightButton().tap();
-    app.navigationBar().leftButton().tap();
-  });
+  app.mainWindow().tableViews()["Empty list"].cells()["TableView Demo"].slowTap();
+  app.navigationBar().rightButton().slowTap();
+  app.mainWindow().tableViews()["Empty list"].cells()["One"].slowTap();
+  app.mainWindow().tableViews()["Empty list"].cells()["Two"].slowTap();
+  app.toolbar().buttons()["Delete"].slowTap();
+  app.navigationBar().rightButton().slowTap();
+  app.navigationBar().leftButton().slowTap();
 
   delay();
 })
