@@ -58,6 +58,24 @@ mkdir my_application/tests/output
 ## Creating tests
 Scenarios supports tests written using Apple's UI Automation JavaScript library, and tuneup_js.
 
+First, create an empty test file with the prefix:
+
+    *_test.js
+
+e.g. login_test.js
+
+Edit the file to add the required import statmement:
+
+    #import "support/scenarios.js"
+
+Add a stub test:
+
+    test("My first test", function(target, app) {
+
+    })
+
+Now to generate test content:
+
 **Automatically generating tests**
 Checkout the iOS project, and select "Product" > "Profile".
 Instruments should launch. Select "Automation" from the "iOS Simulator" section, and click "Profile".
