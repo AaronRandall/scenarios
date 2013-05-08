@@ -1,7 +1,7 @@
 # Scenarios - iOS Acceptance Testing
 
 ## Overview
-Scenarios (Scenar-iOS, see what I did there...) is an application that handles running acceptance tests for iOS apps, on a simulator or physical device. 
+Scenarios (Scenar-iOS, see what I did there?) is an application that handles running acceptance tests for iOS apps, on a simulator or physical device. 
 
 Record interactions with your iOS app using Instruments, then package the output as tests.  Scenarios enables you to easily run a collection of tests against simulated and hardware app installs, and can be used ad-hoc, or connected to a continuous integration server.
 
@@ -34,15 +34,15 @@ From a terminal, run:
 
     scenarios/bin/simulator_example
 
-The first time you run the tests you may be asked for your password for developer tools.
+The first time you run the tests you may be asked for your password for developer tools. Store this in your keychain if you wish to avoid the prompt in the future.
 
 ## Run the example on hardware
-To run tests against hardware, first you should make sure your hardware is part of your provisioning profile, and then from a terminal, run:
+To run tests against hardware, ensure that your device is correctly setup with a provisioning profile (i.e. you can already deploy and run apps on your device via Xcode), and then from a terminal, run:
 
     scenarios/bin/hardware_example
 
 # Setting up Scenarios with your project #
-If you've successfully installed Scenarios, run the samples, and decided you'd like to use it with your project, perform the following: 
+If you've successfully installed Scenarios, run the samples, and decided you'd like to use it with your project, complete the following steps:
 
 ## Project structure
 Scenarios requires two folders to exist:
@@ -74,24 +74,16 @@ Tuneup_js is JavaScript library which builds upon the UIAutomation library provi
 
 ## Running tests
 
+To run the tests on a simulator, run the following (substituting as required):
 
-## Stress-testing
-
-After making changes to the tests, you can perform a "stress test" to make sure the new tests are stable.
-This is a simple script that reruns the tests multiple times (either against the simulator or hardware),
-and logs any errors.  Edit the script to change the constants as required, then run:
-
-    bin/scripts/stress_test
-
-If errors occur, take a look at the output folder (specified for the runner) for useful error messages and screenshots
-of what the app looked like when errors occurred.  You may want to empty this directory before running stress tests.
+./run --ios-app-name 'YOUR APP (CFBundleName) NAME' --ios-app-path /path/to/xcodeproject/ --tests-path /path/to/tests/ --tests-output-path /path/to/output/folder/
 
 ## Credits
 Scenarios makes use of the following applications:
 
+* Tuneup_js: https://github.com/alexvollmer/tuneup_js
 * Ios-sim: https://github.com/phonegap/ios-sim
 * Transporter-Chief: http://gamua.com/img/blog/2012/transporter_chief.zip
-* Tuneup_js: https://github.com/alexvollmer/tuneup_js
 
 ## Help
 
