@@ -64,19 +64,17 @@ First, create an empty test file with the prefix:
 
 e.g. login_test.js
 
-Edit the file to add the required import statmement:
+Edit the file to add the required import statmement and a stub test:
 
     #import "support/scenarios.js"
 
-Add a stub test:
-
     test("My first test", function(target, app) {
-
+      // Your test code will go here
     })
 
-Now to generate test content:
+Now to generate the test content:
 
-**Automatically generating tests**
+### Automatically generating tests
 Checkout the iOS project, and select "Product" > "Profile".
 Instruments should launch. Select "Automation" from the "iOS Simulator" section, and click "Profile".
 Under "Choose Target", select "Choose Target" > "AppName".
