@@ -1,9 +1,9 @@
-# Scenarios - iOS App Acceptance Testing
+# Scenarios - iOS Acceptance Testing
 
 ## Overview
-Scenarios (Scenar-iOS, geddit?) is an application that handles running iOS acceptance tests, on a simulator or physical device. 
+Scenarios (Scenar-iOS, geddit?) is an application that handles running acceptance tests for iOS apps, on a simulator or physical device. 
 
-Record interactions with your iOS app using Instruments, then package the output as tests.  Scenarios enables you to easily run a collection of tests against simulated and real app installs, and can be used ad-hoc, or connected to a continuous integration server.
+Record interactions with your iOS app using Instruments, then package the output as tests.  Scenarios enables you to easily run a collection of tests against simulated and hardware app installs, and can be used ad-hoc, or connected to a continuous integration server.
 
 Here's what the sample app & tests included with this project look like running on a simulator and iPhone:
 
@@ -17,26 +17,26 @@ You will need:
 
 ## Installation
 
-* Ensure you have the Xcode command line tools package installed: 
+Ensure you have the Xcode command line tools package installed: 
 
     from Xcode → Preferences → Downloads → Command Line Tools → Install
 
-* Install ios-sim via [Homebrew](http://mxcl.github.io/homebrew/): 
+Install ios-sim via [Homebrew](http://mxcl.github.io/homebrew/): 
 
     brew install ios-sim
 
-* Check-out Scenarios:
+Check-out Scenarios:
 
     git clone git@github.com:AaronRandall/scenarios.git
 
-## Run the example app on a simulator
+## Run the example on a simulator
 From a terminal, run:
 
     scenarios/bin/simulator_example
 
 The first time you run the tests you may be asked for your password for developer tools.
 
-## Run the example app on hardware
+## Run the example on hardware
 To run tests against hardware, first you should make sure your hardware is part of your provisioning profile, and then from a terminal, run:
 
     scenarios/bin/hardware_example
@@ -75,6 +75,6 @@ Scenarios makes use of the following applications:
 
 ## Help
 
-See all options:
+To see all options:
 
     bin/run --help
