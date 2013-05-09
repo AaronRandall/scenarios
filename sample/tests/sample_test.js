@@ -8,7 +8,7 @@ test("Login using username and password", function(target, app) {
     app.keyboard().typeString("mypassword\n");
 
     withTimeout(function(){
-    app.mainWindow().buttons()["Login"].tap();
+      app.mainWindow().buttons()["Login"].tap();
       UIATarget.onAlert = function onAlert(alert) {
         alert.buttons()["OK"].tap();
         return true;
