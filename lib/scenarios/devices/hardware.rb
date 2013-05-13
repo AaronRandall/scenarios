@@ -32,7 +32,7 @@ module Scenarios
           system command_to_run
 
           if $? != 0
-            raise "[ERROR: Test '#{test}' failed" and return
+            raise "[ERROR: Test '#{test}' failed"
           end
         end
       end
