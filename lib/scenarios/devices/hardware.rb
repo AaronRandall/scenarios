@@ -18,7 +18,7 @@ module Scenarios
       end
 
       def install_app
-        Logger.log('Installing on device')
+        Scenarios::Logger.info('Installing on device')
         system "#{APP_DEPLOYER} #{@options.hardware_id.nil? ? '' : "--device " + @options.hardware_id} #{@options.ios_app_path}/build/Debug-iphoneos/#{@options.ios_app_name}.app"
       end
 
@@ -28,7 +28,7 @@ module Scenarios
           Scenarios.kill_simulator
 
           command_to_run = "#{AUTOMATION_LIBRARY_RUNNER} #{@options.ios_app_name} #{test} #{@options.tests_output_path} -d #{@options.hardware_id.nil? ? 'dynamic' : @options.hardware_id} #{"-p -j" + @options.test_variables if @options.test_variables}"
-          Logger.log( "Running test #{test} (#{command_to_run})")
+          Scenarios::Logger.info( "Running test #{test} (#{command_to_run})")
           system command_to_run
 
           if $? != 0

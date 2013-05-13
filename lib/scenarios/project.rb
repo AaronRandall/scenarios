@@ -7,13 +7,13 @@ module Scenarios
     end
 
     def clean_build_directory
-      Logger.log('Deleting any existing builds from the project path')
+      Scenarios::Logger.info('Deleting any existing builds from the project path')
 
       FileUtils.rm_rf(Dir.glob("#{@options.ios_app_path}/build/*"))
     end
 
     def build_app
-      Logger.log('Building the app')
+      Scenarios::Logger.info('Building the app')
 
       Dir.chdir(@options.ios_app_path) do
         system "xcodebuild -sdk #{@test_device.sdk} -configuration Debug clean build > /dev/null"
@@ -21,7 +21,7 @@ module Scenarios
     end
 
     def create_test_support_files
-      Logger.log('Creating test support files')
+      Scenarios::Logger.info('Creating test support files')
 
       support_dir = "#{@options.tests_path}/support"
       FileUtils.mkdir_p(support_dir) unless File.directory?(support_dir)

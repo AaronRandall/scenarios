@@ -13,23 +13,23 @@ module Scenarios
       end
 
       def clean_target
-        Logger.log('Deleting any existing simulator apps') 
+        Scenarios::Logger.info('Deleting any existing simulator apps') 
         FileUtils.rm_rf(Dir.glob("#{simulator_path}/*"))
       end
 
       def install_app
-        Logger.log('Installing and launching in simulator')
+        Scenarios::Logger.info('Installing and launching in simulator')
         system "ios-sim launch '#{@options.ios_app_path}/build/Debug-iphonesimulator/#{@options.ios_app_name}.app' &"
 
-        Logger.log('Waiting for app to launch')
+        Scenarios::Logger.info('Waiting for app to launch')
         sleep 20
       end
 
       def run_tests
-        Logger.log('Running tests')
+        Scenarios::Logger.info('Running tests')
         @tests_to_run.each do |test|
           command_to_run = "#{AUTOMATION_LIBRARY_RUNNER} '#{@options.ios_app_name}' #{test} '#{@options.tests_output_path}' #{'-d dynamic' if @options.run_on_device} -p -j '#{@options.test_variables}'"
-          Logger.log( "Running test #{test} (#{command_to_run})")
+          Scenarios::Logger.info( "Running test #{test} (#{command_to_run})")
           system command_to_run
 
           if $? != 0

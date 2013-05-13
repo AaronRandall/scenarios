@@ -1,7 +1,8 @@
 module Scenarios
-  module Logger
-    def self.log(message)
-      puts "[INFO]: #{message}"
-    end
+  require 'logger'
+
+  Logger = Logger.new(STDOUT)
+  Logger.formatter = proc do |severity, datetime, progname, msg|
+    "[INFO]: #{msg}\n"
   end
 end
