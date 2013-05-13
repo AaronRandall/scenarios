@@ -45,7 +45,7 @@ module Scenarios
       end
 
       def find_simulator_path
-        iphone_simulator_path = File.expand_path("~/Library/Application\ Support/iPhone\ Simulator/")
+        iphone_simulator_path = File.expand_path(IPHONE_SIMULATOR_PATH)
 
         iphone_simulators = Dir.glob("#{iphone_simulator_path}/[0-9]*")
         if iphone_simulators.size == 0
