@@ -2,20 +2,20 @@ module Scenarios
   class Project
 
     def initialize(options, test_device)
-      @ops = options
+      @options = options
       @test_device = test_device
     end
 
     def clean_build_directory
       Logger.log('Deleting any existing builds from the project path')
 
-      FileUtils.rm_rf(Dir.glob("#{@ops.ios_app_path}/build/*"))
+      FileUtils.rm_rf(Dir.glob("#{@options.ios_app_path}/build/*"))
     end
 
     def build_app
       Logger.log('Building the app')
 
-      Dir.chdir("#{@ops.ios_app_path}") do
+      Dir.chdir("#{@options.ios_app_path}") do
         system "xcodebuild -sdk #{@test_device.sdk} -configuration Debug clean build > /dev/null"
       end
     end
@@ -23,7 +23,7 @@ module Scenarios
     def create_test_support_files
       Logger.log('Creating test support files')
 
-      support_dir = "#{@ops.tests_path}/support"
+      support_dir = "#{@options.tests_path}/support"
       FileUtils.mkdir_p(support_dir) unless File.directory?(support_dir)
 
       support_automation_dir = support_dir + '/automation_library'

@@ -4,12 +4,12 @@ module Scenarios
     require ROOT + 'devices/hardware'
 
     def self.new(options, tests_to_run)
-      @ops = options
+      @options = options
 
-      if @ops.run_on_hardware or @ops.hardware_id
-        test_device = Devices::Hardware.new(@ops, tests_to_run)
+      if @options.run_on_hardware or @options.hardware_id
+        test_device = Devices::Hardware.new(@options, tests_to_run)
       else
-        test_device = Devices::Simulator.new(@ops, tests_to_run)
+        test_device = Devices::Simulator.new(@options, tests_to_run)
       end
 
       return test_device

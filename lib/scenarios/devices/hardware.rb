@@ -4,7 +4,7 @@ module Scenarios
 
     class Hardware
       def initialize(options, tests_to_run)
-        @ops = options
+        @options = options
         @tests_to_run = tests_to_run
       end
 
@@ -19,7 +19,7 @@ module Scenarios
 
       def install_app
         Logger.log('Installing on device')
-        system "#{APP_DEPLOYER} #{@ops.hardware_id.nil? ? '' : "--device " + @ops.hardware_id} #{@ops.ios_app_path}/build/Debug-iphoneos/#{@ops.ios_app_name}.app"
+        system "#{APP_DEPLOYER} #{@options.hardware_id.nil? ? '' : "--device " + @options.hardware_id} #{@options.ios_app_path}/build/Debug-iphoneos/#{@options.ios_app_name}.app"
       end
 
       def run_tests
@@ -27,7 +27,7 @@ module Scenarios
           # Quit any stale instances of the simulator and instruments
           Scenarios.kill_simulator
 
-          command_to_run = "#{AUTOMATION_LIBRARY_RUNNER} #{@ops.ios_app_name} #{test} #{@ops.tests_output_path} -d #{@ops.hardware_id.nil? ? 'dynamic' : @ops.hardware_id} #{"-p -j" + @ops.test_variables if @ops.test_variables}"
+          command_to_run = "#{AUTOMATION_LIBRARY_RUNNER} #{@options.ios_app_name} #{test} #{@options.tests_output_path} -d #{@options.hardware_id.nil? ? 'dynamic' : @options.hardware_id} #{"-p -j" + @options.test_variables if @options.test_variables}"
           Logger.log( "Running test #{test} (#{command_to_run})")
           system command_to_run
 

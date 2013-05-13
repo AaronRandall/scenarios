@@ -12,13 +12,13 @@ module Scenarios
 
   class Runner
     def initialize(options)
-      @ops = OpenStruct.new(options)
+      @options = OpenStruct.new(options)
     end
 
     def run
       Scenarios.kill_simulator
-      test_device = Device.new(@ops, tests_to_run)
-      project     = Project.new(@ops, test_device)
+      test_device = Device.new(@options, tests_to_run)
+      project     = Project.new(@options, test_device)
       run_test_steps(test_device, project) 
       Scenarios.kill_simulator
     end
@@ -26,25 +26,25 @@ module Scenarios
     private
 
     def run_test_steps(test_device, project)
-      project.create_test_support_files if @ops.create_test_support_files
-      project.clean_build_directory     if @ops.clean_build_directory
-      project.build_app                 if @ops.build_app
-      test_device.clean_target          if @ops.clean_target
-      test_device.install_app           if @ops.install_app
+      project.create_test_support_files if @options.create_test_support_files
+      project.clean_build_directory     if @options.clean_build_directory
+      project.build_app                 if @options.build_app
+      test_device.clean_target          if @options.clean_target
+      test_device.install_app           if @options.install_app
       test_device.run_tests
     end
 
     def tests_to_run
       tests_to_run = []
 
-      if @ops.test_name
-        tests_to_run.push("#{@ops.tests_path}/#{@ops.test_name}")
+      if @options.test_name
+        tests_to_run.push("#{@options.tests_path}/#{@options.test_name}")
       else
-        Dir["#{@ops.tests_path}/*_test.js"].each {|test| tests_to_run.push(test) }
+        Dir["#{@options.tests_path}/*_test.js"].each {|test| tests_to_run.push(test) }
       end
 
       if tests_to_run.nil? || tests_to_run.size == 0
-        raise RuntimeError, "No tests found in #{@ops.tests_path}"
+        raise RuntimeError, "No tests found in #{@options.tests_path}"
       end
 
       tests_to_run

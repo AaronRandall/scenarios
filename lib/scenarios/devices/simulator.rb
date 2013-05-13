@@ -4,7 +4,7 @@ module Scenarios
 
     class Simulator
       def initialize(options, tests_to_run)
-        @ops = options
+        @options = options
         @tests_to_run = tests_to_run
       end
 
@@ -19,7 +19,7 @@ module Scenarios
 
       def install_app
         Logger.log('Installing and launching in simulator')
-        system "ios-sim launch '#{@ops.ios_app_path}/build/Debug-iphonesimulator/#{@ops.ios_app_name}.app' &"
+        system "ios-sim launch '#{@options.ios_app_path}/build/Debug-iphonesimulator/#{@options.ios_app_name}.app' &"
 
         Logger.log('Waiting for app to launch')
         sleep 20
@@ -28,7 +28,7 @@ module Scenarios
       def run_tests
         Logger.log('Running tests')
         @tests_to_run.each do |test|
-          command_to_run = "#{AUTOMATION_LIBRARY_RUNNER} '#{@ops.ios_app_name}' #{test} '#{@ops.tests_output_path}' #{'-d dynamic' if @ops.run_on_device} -p -j '#{@ops.test_variables}'"
+          command_to_run = "#{AUTOMATION_LIBRARY_RUNNER} '#{@options.ios_app_name}' #{test} '#{@options.tests_output_path}' #{'-d dynamic' if @options.run_on_device} -p -j '#{@options.test_variables}'"
           Logger.log( "Running test #{test} (#{command_to_run})")
           system command_to_run
 
