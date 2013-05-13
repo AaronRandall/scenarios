@@ -26,10 +26,9 @@ module Scenarios
       end
 
       def run_tests
-        Scenarios::Logger.info('Running tests')
         @tests_to_run.each do |test|
           command_to_run = "#{AUTOMATION_LIBRARY_RUNNER} '#{@options.ios_app_name}' #{test} '#{@options.tests_output_path}' #{'-d dynamic' if @options.run_on_device} -p -j '#{@options.test_variables}'"
-          Scenarios::Logger.info( "Running test #{test} (#{command_to_run})")
+          Scenarios::Logger.info( "Running test '#{test}'")
           system command_to_run
 
           if $? != 0

@@ -28,7 +28,7 @@ module Scenarios
           Scenarios.kill_simulator
 
           command_to_run = "#{AUTOMATION_LIBRARY_RUNNER} #{@options.ios_app_name} #{test} #{@options.tests_output_path} -d #{@options.hardware_id.nil? ? 'dynamic' : @options.hardware_id} #{"-p -j" + @options.test_variables if @options.test_variables}"
-          Scenarios::Logger.info( "Running test #{test} (#{command_to_run})")
+          Scenarios::Logger.info( "Running test '#{test}'")
           system command_to_run
 
           if $? != 0
