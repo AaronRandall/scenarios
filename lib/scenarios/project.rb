@@ -15,7 +15,7 @@ module Scenarios
     def build_app
       Logger.log('Building the app')
 
-      Dir.chdir("#{@options.ios_app_path}") do
+      Dir.chdir(@options.ios_app_path) do
         system "xcodebuild -sdk #{@test_device.sdk} -configuration Debug clean build > /dev/null"
       end
     end
