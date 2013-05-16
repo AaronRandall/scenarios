@@ -74,18 +74,19 @@ Edit the file to add the required import statmement and a stub test:
 
 Now to generate the test content:
 
-### Automatically generating tests
-Checkout the iOS project, and select "Product" > "Profile".
-Instruments should launch. Select "Automation" from the "iOS Simulator" section, and click "Profile".
-Under "Choose Target", select "Choose Target" > "AppName".
-Under "Scripts", select "Add" > "Create".
-Click the red Record button at the bottom of the Instruments window.  The simulator should launch.
-Perform some actions (you should see JavaScript being recorded in the Instruments window).
-Copy actions into step_definitions.
+### Automatically generating test content
+To generate test content by interacting with your app, do the following:
+
+* With your application open in Xcode, select "Product" > "Profile".
+* Instruments should launch. Select "Automation" from the "iOS Simulator" section, and click "Profile".
+* Instruments will automatically launch the simulator and install your app.  Once this is complete, under "Scripts", select "Add" > "Create".
+* Click the red "record" button from the script pane to begin collecting interactions with your app.
+* Perform actions and observer JavaScript being recorded in the Instruments window.
+* Copy recorded actions into the empty test class created in the step above.
 
 Read more here: http://developer.apple.com/library/mac/#documentation/developertools/Conceptual/InstrumentsUserGuide/UsingtheAutomationInstrument/UsingtheAutomationInstrument.html#//apple_ref/doc/uid/TP40004652-CH20-SW1
 
-### Manually writing tests
+### Manually writing test content
 Tuneup_js is JavaScript library which builds upon the UIAutomation library provided by Apple.  You can read more about the project and supported assertions here: https://github.com/alexvollmer/tuneup_js
 
 ### Additions to tuneup_js
