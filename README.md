@@ -7,7 +7,7 @@ Record interactions with your iOS app using Instruments, then package the output
 
 Here's what the sample app & tests included with this project look like running on a simulator and iPhone:
 
-Demo video here.
+[Scenarios demo on YouTube](http://www.youtube.com/watch?v=sdYtScmuWCk): 
 
 ## Prerequisites
 
