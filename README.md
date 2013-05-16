@@ -84,10 +84,10 @@ To generate test content by interacting with your app, do the following:
 * Perform actions and observer JavaScript being recorded in the Instruments window.
 * Copy recorded actions into the empty test class created in the step above.
 
-Read more about using Instruments [here](http://developer.apple.com/library/mac/#documentation/developertools/Conceptual/InstrumentsUserGuide/UsingtheAutomationInstrument/UsingtheAutomationInstrument.html#//apple_ref/doc/uid/TP40004652-CH20-SW1)
+Read more about using Instruments [here](http://developer.apple.com/library/mac/#documentation/developertools/Conceptual/InstrumentsUserGuide/UsingtheAutomationInstrument/UsingtheAutomationInstrument.html#//apple_ref/doc/uid/TP40004652-CH20-SW1).
 
 ### Manually writing test content
-Tuneup_js is a JavaScript library which builds upon the UIAutomation library provided by Apple.  You can read more about the project and supported assertions [here](https://github.com/alexvollmer/Tuneup_js)
+Tuneup_js is a JavaScript library which builds upon the UIAutomation library provided by Apple.  You can read more about the project and supported assertions [here](https://github.com/alexvollmer/Tuneup_js).
 
 ### Additions to Tuneup_js
 Alongside the Tuneup_js library, Scenarios also adds two new test features:
