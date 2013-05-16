@@ -5,7 +5,7 @@ Scenarios (Scenar-iOS, see what I did there?) is an application that handles run
 
 Record interactions with your iOS app using Instruments, then package the output as tests.  Scenarios enables you to easily run a collection of tests against simulated and hardware app installs, and can be used ad-hoc, or connected to a continuous integration server.
 
-Here's what the sample app & tests included with this project look like running on a simulator and iPhone:
+Here's what the sample app & tests included with this project look like running on a simulator:
 
 [Scenarios demo on YouTube](http://www.youtube.com/watch?v=sdYtScmuWCk)
 
@@ -52,8 +52,8 @@ Scenarios requires two folders to exist:
 
 These folders can be created anywhere, the Scenarios runner will take the paths of these two folders as inputs.  For example, create a 'tests' and 'output' folder in your existing project:
 
-mkdir my_application/tests
-mkdir my_application/tests/output
+    mkdir my_application/tests
+    mkdir my_application/tests/output
 
 ## Creating tests
 Scenarios supports tests written using Apple's UI Automation JavaScript library, and tuneup_js.
