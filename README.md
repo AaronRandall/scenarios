@@ -84,16 +84,16 @@ To generate test content by interacting with your app, do the following:
 * Perform actions and observer JavaScript being recorded in the Instruments window.
 * Copy recorded actions into the empty test class created in the step above.
 
-Read more here: http://developer.apple.com/library/mac/#documentation/developertools/Conceptual/InstrumentsUserGuide/UsingtheAutomationInstrument/UsingtheAutomationInstrument.html#//apple_ref/doc/uid/TP40004652-CH20-SW1
+Read more about using Instruments [here](http://developer.apple.com/library/mac/#documentation/developertools/Conceptual/InstrumentsUserGuide/UsingtheAutomationInstrument/UsingtheAutomationInstrument.html#//apple_ref/doc/uid/TP40004652-CH20-SW1)
 
 ### Manually writing test content
-Tuneup_js is JavaScript library which builds upon the UIAutomation library provided by Apple.  You can read more about the project and supported assertions here: https://github.com/alexvollmer/tuneup_js
+Tuneup_js is JavaScript library which builds upon the UIAutomation library provided by Apple.  You can read more about the project and supported assertions [here](https://github.com/alexvollmer/tuneup_js)
 
 ### Additions to tuneup_js
 Alongside the tuneup_js library, Scenarios also adds two new test features:
 
-withTimout: use this for potentially long-running calls (e.g. a button click to login, where the API may be slow)
-slowTap();  Allows for slowing-down the speed at which taps are executed.  This helps to a) see what tests are doing, b) help mimic human behaviour (those tests can move pretty fast!)
+* withTimout: use this for potentially long-running calls (e.g. a button click to login, where the API may be slow)
+* slowTap();  Allows for slowing-down the speed at which taps are executed.  This helps to a) see what tests are doing, b) help mimic human behaviour (those tests can move pretty fast!)
 
 ## Running tests
 
