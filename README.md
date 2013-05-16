@@ -87,10 +87,10 @@ To generate test content by interacting with your app, do the following:
 Read more about using Instruments [here](http://developer.apple.com/library/mac/#documentation/developertools/Conceptual/InstrumentsUserGuide/UsingtheAutomationInstrument/UsingtheAutomationInstrument.html#//apple_ref/doc/uid/TP40004652-CH20-SW1)
 
 ### Manually writing test content
-Tuneup_js is a JavaScript library which builds upon the UIAutomation library provided by Apple.  You can read more about the project and supported assertions [here](https://github.com/alexvollmer/tuneup_js)
+Tuneup_js is a JavaScript library which builds upon the UIAutomation library provided by Apple.  You can read more about the project and supported assertions [here](https://github.com/alexvollmer/Tuneup_js)
 
-### Additions to tuneup_js
-Alongside the tuneup_js library, Scenarios also adds two new test features:
+### Additions to Tuneup_js
+Alongside the Tuneup_js library, Scenarios also adds two new test features:
 
 * withTimout: use this for potentially long-running calls (e.g. a button click to login, where the API may be slow)
 * slowTap();  Allows for slowing-down the speed at which taps are executed.  This helps to a) see what tests are doing, b) help mimic human behaviour (those tests can move pretty fast otherwise!)
@@ -104,7 +104,7 @@ To run the tests on a simulator, run the following (substituting as required):
 ## Credits
 Scenarios makes use of the following applications:
 
-* Tuneup_js: https://github.com/alexvollmer/tuneup_js
+* Tuneup_js: https://github.com/alexvollmer/Tuneup_js
 * Ios-sim: https://github.com/phonegap/ios-sim
 * Transporter-Chief: http://gamua.com/img/blog/2012/transporter_chief.zip
 
