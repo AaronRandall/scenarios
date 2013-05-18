@@ -3,7 +3,7 @@
 ## Overview
 Scenarios (Scenar-iOS, see what I did there?) is an application that handles running acceptance tests for iOS apps from the command-line.
 
-Record interactions with your iOS app using Instruments, then package the JavaScript output as test files.  Scenarios enables you to easily run a collection of tests against simulated and hardware app installs, from the command-line, by running the following steps:
+Record interactions with your iOS app using Instruments, then package the JavaScript output as test files.  Scenarios enables you to easily run a collection of tests against simulated and hardware app installs, by running the following steps:
 
 * Cleans any previous app installs from the target device
 * Builds the latest version of the app
