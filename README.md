@@ -1,9 +1,15 @@
 # Scenarios - iOS Acceptance Testing
 
 ## Overview
-Scenarios (Scenar-iOS, see what I did there?) is an application that handles running acceptance tests for iOS apps, on a simulator or physical device. 
+Scenarios (Scenar-iOS, see what I did there?) is an application that handles running acceptance tests for iOS apps from the command-line.
 
-Record interactions with your iOS app using Instruments, then package the output as tests.  Scenarios enables you to easily run a collection of tests against simulated and hardware app installs, from the command-line.
+Record interactions with your iOS app using Instruments, then package the JavaScript output as test files.  Scenarios enables you to easily run a collection of tests against simulated and hardware app installs, from the command-line, by running the following steps:
+
+* Cleans any previous app installs from the target device
+* Builds the latest version of the app
+* Installs the app on the target device
+* Runs [Tuneup_js](https://github.com/alexvollmer/tuneup_js) formatted tests against the installed app
+* Reports the test results
 
 Here's what the sample app & tests included with this project look like running on a simulator:
 
