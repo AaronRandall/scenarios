@@ -11,9 +11,7 @@ Record interactions with your iOS app using Instruments, then package the JavaSc
 * Runs [Tuneup_js](https://github.com/alexvollmer/tuneup_js) formatted tests against the installed app
 * Reports the test results
 
-Here's what the sample app & tests included with this project look like running on a simulator:
-
-[Scenarios demo on YouTube](http://www.youtube.com/watch?v=sdYtScmuWCk)
+Here's what the sample app & tests included with this project look like running on a simulator: [Scenarios demo on YouTube](http://www.youtube.com/watch?v=sdYtScmuWCk)
 
 ## Prerequisites
 
