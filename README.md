@@ -98,13 +98,13 @@ Tuneup_js is a JavaScript library which builds upon the UIAutomation library pro
 ### Additions to Tuneup_js
 Alongside the Tuneup_js library, Scenarios also adds two new test features:
 
-* withTimeout: use this for potentially long-running calls (e.g. a button click to login, where the API may be slow).  For example:
+withTimeout: use this for potentially long-running calls (e.g. a button click to login, where the API may be slow).  For example:
 
     withTimeout(function(){
       app.mainWindow().buttons()["Login"].tap();
     });
 
-* slowTap: Allows for slowing-down the speed at which taps are executed.  This helps to a) see what tests are doing, b) help mimic human behaviour (those tests can move pretty fast otherwise!).  For example:
+slowTap: Allows for slowing-down the speed at which taps are executed.  This helps to a) see what tests are doing, b) help mimic human behaviour (those tests can move pretty fast otherwise!).  For example:
 
     app.toolbar().buttons()["Delete"].slowTap();
 
